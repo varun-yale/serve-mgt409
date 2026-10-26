@@ -1,0 +1,8 @@
+First baseline attempt (Phase 1 code, real gpt-6-luna calls). The harness crashed in the
+summary step (a field-name collision in run_eval.py, not an agent error) before writing JSON.
+Per-case console lines as printed (C01-C27):
+PASS C01 griha_telugu_hamden 9/9 ok | FAIL C02 late_morning: time wrong, options 07:00/08:00 outside 10:00-11:59
+PASS C03 | FAIL C04 exact_evening: time category wrong (schedule ok) | PASS C05-C14
+FAIL C15 diwali: time category wrong (schedule ok) | FAIL C16 seeded conflict 11am: time wrong, options 07:30
+PASS C17-C24 | FAIL C25 range 10-11:30 Tamil: time wrong, no option | PASS C26 | FAIL C27 exact 8am: option 08:30 outside
+Result: 21/27 passed; all 6 failures involve time-of-day handling.

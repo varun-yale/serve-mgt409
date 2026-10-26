@@ -1,0 +1,3213 @@
+{
+  "summary": {
+    "label": "v2_optimized",
+    "run_at": "2026-10-25T21:17:18",
+    "model": "gpt-6-luna",
+    "case_set": "main",
+    "profile": "optimized",
+    "defenses": "on",
+    "eval_today": "2026-10-25",
+    "date_tokens": {
+      "SAT_NEXT": "2026-10-31",
+      "SAT2": "2026-11-14",
+      "SAT3": "2026-11-21",
+      "SUN1": "2026-11-01",
+      "SUN2": "2026-11-08",
+      "MON1": "2026-11-02",
+      "TUE1": "2026-11-03",
+      "THU1": "2026-11-05",
+      "FRI1": "2026-11-06",
+      "TOMORROW": "2026-10-26",
+      "LAST_SUNDAY": "2026-10-18",
+      "DIWALI": "2026-11-08",
+      "IYER_OFF_MID": "2026-11-08"
+    },
+    "pricing": {
+      "gpt-6-luna": {
+        "input_per_1m": 0.1,
+        "cached_input_per_1m": 0.01,
+        "cache_write_per_1m": 0.125,
+        "output_per_1m": 0.5
+      },
+      "source": "OpenAI Standard pricing per 1M tokens, as given in MGT 409 Lecture 11 (same table used in HW6)."
+    },
+    "cases": 27,
+    "cases_passed": 26,
+    "field_accuracy_overall": 0.993,
+    "field_accuracy_by_field": {
+      "attendees": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "city": {
+        "correct": 9,
+        "total": 9,
+        "accuracy": 1.0
+      },
+      "dates": {
+        "correct": 23,
+        "total": 23,
+        "accuracy": 1.0
+      },
+      "language": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "location_type": {
+        "correct": 23,
+        "total": 23,
+        "accuracy": 1.0
+      },
+      "missing": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "service_id": {
+        "correct": 25,
+        "total": 25,
+        "accuracy": 1.0
+      },
+      "special_requirements": {
+        "correct": 2,
+        "total": 2,
+        "accuracy": 1.0
+      },
+      "status": {
+        "correct": 26,
+        "total": 27,
+        "accuracy": 0.963
+      },
+      "time": {
+        "correct": 21,
+        "total": 21,
+        "accuracy": 1.0
+      }
+    },
+    "schedule_correct": 27,
+    "final_options_total": 43,
+    "agent_proposals_rejected_by_rules": 0,
+    "cases_with_option_policy_violations": 0,
+    "critical_bookings_created_by_agents": 0,
+    "pipeline_errors": 0,
+    "latency_seconds": {
+      "mean": 10.52,
+      "median": 9.98,
+      "p90": 15.42,
+      "max": 29.14
+    },
+    "tokens": {
+      "input_tokens": 143641,
+      "cached_input_tokens": 91507,
+      "cache_write_tokens": 40164,
+      "output_tokens": 16240,
+      "reasoning_tokens": 4666,
+      "model_requests": 95,
+      "tool_calls": 79,
+      "portkey_cache_hits": 0
+    },
+    "cost_usd_total": 0.015253,
+    "cost_usd_per_request_mean": 0.000565,
+    "cost_usd_per_scheduled_request_mean": 0.000651,
+    "failed_cases": [
+      "C18_contradictory_location"
+    ]
+  },
+  "results": [
+    {
+      "id": "C01_griha_telugu_hamden",
+      "category": "normal + language + accessibility",
+      "text": "Hi, we just bought a house in Hamden and would love a griha pravesh on Saturday, November 21, in the morning if possible. We'd like the ceremony in Telugu. About 25 guests, and my mother uses a wheelchair.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 2 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "language": true,
+        "attendees": true,
+        "time": true,
+        "special_requirements": true
+      },
+      "fields_correct": 9,
+      "fields_total": 9,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "They ask for a \u201cgriha pravesh\u201d for their newly bought house.",
+        "preferred_dates": [
+          "2026-11-21"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "home",
+        "city": "Hamden",
+        "city_source": "stated",
+        "language": "Telugu",
+        "attendees": 25,
+        "special_requirements": [
+          "Mother uses a wheelchair"
+        ],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Griha Pravesh at their home in Hamden on Saturday, November 21, in the morning, in Telugu, for about 25 guests; their mother uses a wheelchair."
+      },
+      "options": [
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-21",
+          "start_time": "08:00",
+          "location_type": "home",
+          "city": "Hamden",
+          "language": "Telugu",
+          "total_cents": 25100
+        },
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-21",
+          "start_time": "08:30",
+          "location_type": "home",
+          "city": "Hamden",
+          "language": "Telugu",
+          "total_cents": 25100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "The availability search found two qualifying starts with Pandit Iyer; the other qualified priests do not speak Telugu. Hamden is within the service area with no travel fee; please confirm the home setup is accessible for the wheelchair user, as accessibility was not evaluated by the scheduling search.",
+      "wall_seconds": 12.26,
+      "usage": {
+        "input_tokens": 6165,
+        "cached_input_tokens": 2551,
+        "cache_write_tokens": 3110,
+        "output_tokens": 818,
+        "reasoning_tokens": 261,
+        "model_requests": 4,
+        "tool_calls": 4,
+        "cost_usd": 0.00087366,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 3903,
+          "model_requests": 1,
+          "input_tokens": 1507,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 1381,
+          "output_tokens": 225,
+          "tool_calls": 0,
+          "cost_usd": 0.000297725,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 8294,
+          "model_requests": 3,
+          "input_tokens": 4658,
+          "cached_input_tokens": 2551,
+          "cache_write_tokens": 1729,
+          "output_tokens": 593,
+          "tool_calls": 4,
+          "cost_usd": 0.000575935,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C02_satya_late_morning_hindi",
+      "category": "normal + late-morning preference",
+      "text": "Could we have a Satyanarayan puja at the temple on Sunday, November 1, late morning please? Hindi is our language and about 20 family members will come.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "language": true,
+        "attendees": true,
+        "time": true
+      },
+      "fields_correct": 7,
+      "fields_total": 7,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "They asked for a \u201cSatyanarayan puja.\u201d",
+        "preferred_dates": [
+          "2026-11-01"
+        ],
+        "date_notes": null,
+        "time_preference": "late_morning",
+        "earliest_start": "10:00",
+        "latest_start": "11:59",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": "Hindi",
+        "attendees": 20,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Request for a Satyanarayan Puja at the temple on November 1, 2026, in late morning, in Hindi, for about 20 family members."
+      },
+      "options": [
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-11-01",
+          "start_time": "10:00",
+          "location_type": "temple",
+          "city": null,
+          "language": "Hindi",
+          "total_cents": 15100
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-01",
+          "start_time": "10:30",
+          "location_type": "temple",
+          "city": null,
+          "language": "Hindi",
+          "total_cents": 15100
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-01",
+          "start_time": "10:00",
+          "location_type": "temple",
+          "city": null,
+          "language": "Hindi",
+          "total_cents": 15100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "Three Hindi-speaking priests have available starts on the preferred date within the requested time window. The search excluded Pandit Venkatesh Iyer because he does not speak Hindi. The service is request-based and the listed service price is $151.",
+      "wall_seconds": 9.5,
+      "usage": {
+        "input_tokens": 6082,
+        "cached_input_tokens": 3803,
+        "cache_write_tokens": 1775,
+        "output_tokens": 650,
+        "reasoning_tokens": 105,
+        "model_requests": 4,
+        "tool_calls": 3,
+        "cost_usd": 0.0006353,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2349,
+          "model_requests": 1,
+          "input_tokens": 1493,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 61,
+          "output_tokens": 141,
+          "tool_calls": 0,
+          "cost_usd": 0.000103785,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 7119,
+          "model_requests": 3,
+          "input_tokens": 4589,
+          "cached_input_tokens": 2497,
+          "cache_write_tokens": 1714,
+          "output_tokens": 509,
+          "tool_calls": 3,
+          "cost_usd": 0.00053152,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C03_naming_gujarati_unqualified",
+      "category": "priest qualification + language",
+      "text": "We'd like a Namakaranam for our son at the temple on Saturday, November 14 in the morning, performed in Gujarati.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "We couldn't find an open time that matches your request. The temple office will review it and contact you with alternatives. Nothing is booked yet.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "language": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_naming",
+        "service_match_reason": "They asked for a \u201cNamakaranam\u201d for their son.",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": "Gujarati",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Request for a Namakaranam for their son at the temple on November 14, 2026, in the morning, performed in Gujarati."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": "No qualified priest returned for Namakaranam speaks Gujarati, so no options can be offered for the requested language. The preferred date and morning window do not change that constraint.",
+      "wall_seconds": 11.32,
+      "usage": {
+        "input_tokens": 4361,
+        "cached_input_tokens": 2349,
+        "cache_write_tokens": 1634,
+        "output_tokens": 409,
+        "reasoning_tokens": 77,
+        "model_requests": 3,
+        "tool_calls": 3,
+        "cost_usd": 0.00047004,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 4549,
+          "model_requests": 1,
+          "input_tokens": 1483,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 51,
+          "output_tokens": 150,
+          "tool_calls": 0,
+          "cost_usd": 0.000107035,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 6744,
+          "model_requests": 2,
+          "input_tokens": 2878,
+          "cached_input_tokens": 1043,
+          "cache_write_tokens": 1583,
+          "output_tokens": 259,
+          "tool_calls": 3,
+          "cost_usd": 0.000363005,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C04_archana_exact_evening",
+      "category": "exact time",
+      "text": "Please book an archana for my daughter's birthday on Thursday, November 5 at 6:30 pm.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_archana",
+        "service_match_reason": "They asked for \u201can archana\u201d for their daughter's birthday.",
+        "preferred_dates": [
+          "2026-11-05"
+        ],
+        "date_notes": null,
+        "time_preference": "exact",
+        "earliest_start": "18:30",
+        "latest_start": "18:30",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests an Archana for their daughter's birthday on November 5, 2026, at 6:30 pm."
+      },
+      "options": [
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-11-05",
+          "start_time": "18:30",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 2500
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-05",
+          "start_time": "18:30",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 2500
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-05",
+          "start_time": "18:30",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 2500
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "Three priests have a valid 18:30 temple slot on 2026-11-05. Pandit Venkatesh Iyer was excluded because that time is outside his Thursday working hours.",
+      "wall_seconds": 15.88,
+      "usage": {
+        "input_tokens": 4360,
+        "cached_input_tokens": 2347,
+        "cache_write_tokens": 1635,
+        "output_tokens": 546,
+        "reasoning_tokens": 106,
+        "model_requests": 3,
+        "tool_calls": 3,
+        "cost_usd": 0.00053865,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2213,
+          "model_requests": 1,
+          "input_tokens": 1478,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 46,
+          "output_tokens": 154,
+          "tool_calls": 0,
+          "cost_usd": 0.00010841,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 13639,
+          "model_requests": 2,
+          "input_tokens": 2882,
+          "cached_input_tokens": 1041,
+          "cache_write_tokens": 1589,
+          "output_tokens": 392,
+          "tool_calls": 3,
+          "cost_usd": 0.000430235,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C05_abhishekam_evening",
+      "category": "evening preference",
+      "text": "I'd like to sponsor an abhishekam on Friday, November 6 in the evening, in memory of my father.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 2 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_abhishekam",
+        "service_match_reason": "They asked to \u201csponsor an abhishekam.\u201d",
+        "preferred_dates": [
+          "2026-11-06"
+        ],
+        "date_notes": null,
+        "time_preference": "evening",
+        "earliest_start": "17:00",
+        "latest_start": "20:59",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [
+          "In memory of father"
+        ],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member would like to sponsor an Abhishekam at the temple on Friday, November 6, 2026, in the evening, in memory of their father."
+      },
+      "options": [
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-11-06",
+          "start_time": "18:30",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 5100
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-06",
+          "start_time": "18:30",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 5100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "The availability search found two options at 18:30 on the preferred date. Pandit Venkatesh Iyer is away that day. Request notes that this service is in memory of the member\u2019s father.",
+      "wall_seconds": 9.56,
+      "usage": {
+        "input_tokens": 5901,
+        "cached_input_tokens": 3765,
+        "cache_write_tokens": 1632,
+        "output_tokens": 659,
+        "reasoning_tokens": 140,
+        "model_requests": 4,
+        "tool_calls": 3,
+        "cost_usd": 0.00062155,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2482,
+          "model_requests": 1,
+          "input_tokens": 1481,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 49,
+          "output_tokens": 201,
+          "tool_calls": 0,
+          "cost_usd": 0.000132285,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 7052,
+          "model_requests": 3,
+          "input_tokens": 4420,
+          "cached_input_tokens": 2459,
+          "cache_write_tokens": 1583,
+          "output_tokens": 458,
+          "tool_calls": 3,
+          "cost_usd": 0.000489265,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C06_consult_tamil_afternoon",
+      "category": "afternoon + language",
+      "text": "Can I meet with a priest for a consultation on Monday, November 2 in the afternoon? I'd prefer to speak in Tamil.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 2 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "language": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_counsel",
+        "service_match_reason": "They ask to \u201cmeet with a priest for a consultation.\u201d",
+        "preferred_dates": [
+          "2026-11-02"
+        ],
+        "date_notes": null,
+        "time_preference": "afternoon",
+        "earliest_start": "12:00",
+        "latest_start": "16:59",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": "Tamil",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Requests a priest consultation at the temple on November 2, 2026, in the afternoon, preferably in Tamil."
+      },
+      "options": [
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-02",
+          "start_time": "16:00",
+          "location_type": "temple",
+          "city": null,
+          "language": "Tamil",
+          "total_cents": 0
+        },
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-02",
+          "start_time": "16:30",
+          "location_type": "temple",
+          "city": null,
+          "language": "Tamil",
+          "total_cents": 0
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "Only Pandit Venkatesh Iyer among the qualified priests speaks Tamil. The service has fixed starts at 16:00, 16:30, and 17:00; the 17:00 start is outside the requested latest start, leaving the two listed options.",
+      "wall_seconds": 29.14,
+      "usage": {
+        "input_tokens": 5713,
+        "cached_input_tokens": 3515,
+        "cache_write_tokens": 1694,
+        "output_tokens": 547,
+        "reasoning_tokens": 52,
+        "model_requests": 4,
+        "tool_calls": 3,
+        "cost_usd": 0.0005708,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2813,
+          "model_requests": 1,
+          "input_tokens": 1482,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 50,
+          "output_tokens": 145,
+          "tool_calls": 0,
+          "cost_usd": 0.00010441,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 26304,
+          "model_requests": 3,
+          "input_tokens": 4231,
+          "cached_input_tokens": 2209,
+          "cache_write_tokens": 1644,
+          "output_tokens": 402,
+          "tool_calls": 3,
+          "cost_usd": 0.00046639,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C07_missing_everything",
+      "category": "missing information",
+      "text": "Hello, I'd like to book something for my family soon. What do you suggest?",
+      "status": "needs_info",
+      "error": null,
+      "member_message": "What service are you interested in, what date would you prefer, and would you like it at the temple or at home?",
+      "fields": {
+        "status": true,
+        "missing": true
+      },
+      "fields_correct": 2,
+      "fields_total": 2,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": null,
+        "service_match_reason": "They said they\u2019d like to book \u201csomething for my family,\u201d but didn\u2019t identify a ceremony or service.",
+        "preferred_dates": [],
+        "date_notes": "\u201cSoon\u201d does not specify a date.",
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": null,
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [
+          "service",
+          "date",
+          "location"
+        ],
+        "clarifying_question": "What service are you interested in, what date would you prefer, and would you like it at the temple or at home?",
+        "summary": "Member is interested in booking a service for their family soon but has not specified the service, a date, or the location."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": null,
+      "wall_seconds": 3.7,
+      "usage": {
+        "input_tokens": 1473,
+        "cached_input_tokens": 1306,
+        "cache_write_tokens": 41,
+        "output_tokens": 314,
+        "reasoning_tokens": 143,
+        "model_requests": 1,
+        "tool_calls": 0,
+        "cost_usd": 0.00018778,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 3681,
+          "model_requests": 1,
+          "input_tokens": 1473,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 41,
+          "output_tokens": 314,
+          "tool_calls": 0,
+          "cost_usd": 0.000187785,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": []
+    },
+    {
+      "id": "C08_missing_date",
+      "category": "missing information",
+      "text": "We want a Satyanarayan puja at our home in Orange. Please let me know.",
+      "status": "needs_info",
+      "error": null,
+      "member_message": "What date would you prefer for the puja?",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "location_type": true,
+        "city": true,
+        "missing": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "They asked for a \u201cSatyanarayan puja.\u201d",
+        "preferred_dates": [],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "Orange",
+        "city_source": "stated",
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [
+          "date"
+        ],
+        "clarifying_question": "What date would you prefer for the puja?",
+        "summary": "The member is requesting a Satyanarayan Puja at their home in Orange; date is not yet specified."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": null,
+      "wall_seconds": 2.59,
+      "usage": {
+        "input_tokens": 1476,
+        "cached_input_tokens": 1306,
+        "cache_write_tokens": 44,
+        "output_tokens": 191,
+        "reasoning_tokens": 41,
+        "model_requests": 1,
+        "tool_calls": 0,
+        "cost_usd": 0.00012666,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2572,
+          "model_requests": 1,
+          "input_tokens": 1476,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 44,
+          "output_tokens": 191,
+          "tool_calls": 0,
+          "cost_usd": 0.00012666,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": []
+    },
+    {
+      "id": "C09_missing_location",
+      "category": "missing information",
+      "text": "Satyanarayan puja on Sunday, November 1 in the morning, in Hindi.",
+      "status": "needs_info",
+      "error": null,
+      "member_message": "Would you prefer the puja at the temple or at home?",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "language": true,
+        "missing": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "They asked for \u201cSatyanarayan puja.\u201d",
+        "preferred_dates": [
+          "2026-11-01"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": null,
+        "city": null,
+        "city_source": null,
+        "language": "Hindi",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [
+          "location"
+        ],
+        "clarifying_question": "Would you prefer the puja at the temple or at home?",
+        "summary": "The member is requesting a Satyanarayan Puja on November 1, 2026, in the morning, in Hindi; location preference is needed."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": null,
+      "wall_seconds": 2.94,
+      "usage": {
+        "input_tokens": 1475,
+        "cached_input_tokens": 1306,
+        "cache_write_tokens": 43,
+        "output_tokens": 189,
+        "reasoning_tokens": 56,
+        "model_requests": 1,
+        "tool_calls": 0,
+        "cost_usd": 0.00012553,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2931,
+          "model_requests": 1,
+          "input_tokens": 1475,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 43,
+          "output_tokens": 189,
+          "tool_calls": 0,
+          "cost_usd": 0.000125535,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": []
+    },
+    {
+      "id": "C10_home_city_from_profile",
+      "category": "missing information (resolvable from profile)",
+      "text": "We'd like a griha pravesh at our new home on Saturday, November 21, morning.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "\u201cgriha pravesh\u201d at \u201cour new home\u201d matches Griha Pravesh.",
+        "preferred_dates": [
+          "2026-11-21"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "home",
+        "city": "Hamden",
+        "city_source": "member_profile",
+        "language": null,
+        "attendees": null,
+        "special_requirements": [
+          "Town taken from member profile \u2014 confirm"
+        ],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Griha Pravesh at their new home on Saturday, November 21, 2026, in the morning; Hamden is taken from their profile and needs confirmation."
+      },
+      "options": [
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-21",
+          "start_time": "08:00",
+          "location_type": "home",
+          "city": "Hamden",
+          "language": null,
+          "total_cents": 25100
+        },
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-21",
+          "start_time": "08:00",
+          "location_type": "home",
+          "city": "Hamden",
+          "language": null,
+          "total_cents": 25100
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-21",
+          "start_time": "08:30",
+          "location_type": "home",
+          "city": "Hamden",
+          "language": null,
+          "total_cents": 25100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "The preferred date is 27 days away, exceeding the service's 5-day minimum lead time; Griha Pravesh is a 120-minute, request-based home service starting at $251. Hamden is within the service radius with no travel fee. The town was taken from the member profile, so confirm Hamden before proceeding.",
+      "wall_seconds": 17.74,
+      "usage": {
+        "input_tokens": 9042,
+        "cached_input_tokens": 6484,
+        "cache_write_tokens": 1802,
+        "output_tokens": 814,
+        "reasoning_tokens": 183,
+        "model_requests": 6,
+        "tool_calls": 5,
+        "cost_usd": 0.00077269,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 3705,
+          "model_requests": 2,
+          "input_tokens": 2998,
+          "cached_input_tokens": 2658,
+          "cache_write_tokens": 88,
+          "output_tokens": 204,
+          "tool_calls": 1,
+          "cost_usd": 0.00016478,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 14000,
+          "model_requests": 4,
+          "input_tokens": 6044,
+          "cached_input_tokens": 3826,
+          "cache_write_tokens": 1714,
+          "output_tokens": 610,
+          "tool_calls": 4,
+          "cost_usd": 0.00060791,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "intake:get_member_profile",
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C11_travel_beyond_radius",
+      "category": "travel constraint",
+      "text": "Could a priest come to our home in Stamford for a Satyanarayan puja on Saturday, November 14 in the afternoon?",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "We couldn't find an open time that matches your request. The temple office will review it and contact you with alternatives. Nothing is booked yet.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "They asked for a \u201cSatyanarayan puja.\u201d",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "afternoon",
+        "earliest_start": "12:00",
+        "latest_start": "16:59",
+        "location_type": "home",
+        "city": "Stamford",
+        "city_source": "stated",
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Satyanarayan Puja at their home in Stamford on Saturday, November 14, 2026, in the afternoon."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": "No options are available for this home service in Stamford: the town is 46 miles away, beyond the 45-mile service radius, so none of the qualified priests can travel there. Nearby dates would not resolve this location constraint.",
+      "wall_seconds": 9.44,
+      "usage": {
+        "input_tokens": 6107,
+        "cached_input_tokens": 3838,
+        "cache_write_tokens": 1765,
+        "output_tokens": 453,
+        "reasoning_tokens": 118,
+        "model_requests": 4,
+        "tool_calls": 4,
+        "cost_usd": 0.00053591,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2153,
+          "model_requests": 1,
+          "input_tokens": 1483,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 51,
+          "output_tokens": 155,
+          "tool_calls": 0,
+          "cost_usd": 0.000109535,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 7257,
+          "model_requests": 3,
+          "input_tokens": 4624,
+          "cached_input_tokens": 2532,
+          "cache_write_tokens": 1714,
+          "output_tokens": 298,
+          "tool_calls": 4,
+          "cost_usd": 0.00042637,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C12_travel_fee_waterbury",
+      "category": "travel fee",
+      "text": "Griha pravesh at our home in Waterbury on Saturday, November 21, any time that works.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "They asked for \u201cGriha pravesh\u201d at their home.",
+        "preferred_dates": [
+          "2026-11-21"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "Waterbury",
+        "city_source": "stated",
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Griha Pravesh at their home in Waterbury on Saturday, November 21, 2026, and is flexible about the time."
+      },
+      "options": [
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-21",
+          "start_time": "08:00",
+          "location_type": "home",
+          "city": "Waterbury",
+          "language": null,
+          "total_cents": 25550
+        },
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-21",
+          "start_time": "08:30",
+          "location_type": "home",
+          "city": "Waterbury",
+          "language": null,
+          "total_cents": 25550
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-21",
+          "start_time": "09:00",
+          "location_type": "home",
+          "city": "Waterbury",
+          "language": null,
+          "total_cents": 25550
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "Waterbury is within the service radius (28 miles one way); the reported travel fee is $4.50 and one-way drive time is 36 minutes. The requested date meets the service's five-day minimum lead time. These are recommendations for administrator review, not bookings.",
+      "wall_seconds": 12.93,
+      "usage": {
+        "input_tokens": 5948,
+        "cached_input_tokens": 3767,
+        "cache_write_tokens": 1677,
+        "output_tokens": 792,
+        "reasoning_tokens": 213,
+        "model_requests": 4,
+        "tool_calls": 4,
+        "cost_usd": 0.0006937,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2382,
+          "model_requests": 1,
+          "input_tokens": 1480,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 48,
+          "output_tokens": 205,
+          "tool_calls": 0,
+          "cost_usd": 0.00013416,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 10512,
+          "model_requests": 3,
+          "input_tokens": 4468,
+          "cached_input_tokens": 2461,
+          "cache_write_tokens": 1629,
+          "output_tokens": 587,
+          "tool_calls": 4,
+          "cost_usd": 0.000559535,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C13_travel_priest_limit",
+      "category": "travel constraint (per-priest)",
+      "text": "We'd like a Satyanarayan puja at our home in Middletown on Saturday, November 14, in the morning, in Hindi.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "language": true,
+        "time": true
+      },
+      "fields_correct": 7,
+      "fields_total": 7,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "They asked for a \u201cSatyanarayan puja.\u201d",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "home",
+        "city": "Middletown",
+        "city_source": "stated",
+        "language": "Hindi",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Satyanarayan Puja at their home in Middletown on November 14, 2026, in the morning, in Hindi."
+      },
+      "options": [
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-14",
+          "start_time": "08:00",
+          "location_type": "home",
+          "city": "Middletown",
+          "language": "Hindi",
+          "total_cents": 15250
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-14",
+          "start_time": "09:00",
+          "location_type": "home",
+          "city": "Middletown",
+          "language": "Hindi",
+          "total_cents": 15250
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-14",
+          "start_time": "08:30",
+          "location_type": "home",
+          "city": "Middletown",
+          "language": "Hindi",
+          "total_cents": 15250
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "The requested date has multiple morning options with Hindi-speaking priests. Middletown is 26 miles away: Pandit Dube is outside his 20-mile travel limit, while Pandit Joshi and Pandit Sharma are within their stated travel limits. These are recommendations for administrator review, not bookings.",
+      "wall_seconds": 15.42,
+      "usage": {
+        "input_tokens": 7774,
+        "cached_input_tokens": 5242,
+        "cache_write_tokens": 1902,
+        "output_tokens": 934,
+        "reasoning_tokens": 285,
+        "model_requests": 5,
+        "tool_calls": 4,
+        "cost_usd": 0.00082017,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 4211,
+          "model_requests": 1,
+          "input_tokens": 1487,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 55,
+          "output_tokens": 196,
+          "tool_calls": 0,
+          "cost_usd": 0.000130535,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 11171,
+          "model_requests": 4,
+          "input_tokens": 6287,
+          "cached_input_tokens": 3936,
+          "cache_write_tokens": 1847,
+          "output_tokens": 738,
+          "tool_calls": 4,
+          "cost_usd": 0.000689635,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C14_time_off_telugu",
+      "category": "date conflict (priest time off)",
+      "text": "Abhishekam on Sunday, November 8 in the morning, conducted in Telugu please.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "language": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_abhishekam",
+        "service_match_reason": "The member requested \u201cAbhishekam.\u201d",
+        "preferred_dates": [
+          "2026-11-08"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": "Telugu",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests an Abhishekam at the temple on November 8, 2026, in the morning, conducted in Telugu."
+      },
+      "options": [
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-05",
+          "start_time": "07:30",
+          "location_type": "temple",
+          "city": null,
+          "language": "Telugu",
+          "total_cents": 5100
+        },
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-05",
+          "start_time": "11:00",
+          "location_type": "temple",
+          "city": null,
+          "language": "Telugu",
+          "total_cents": 5100
+        },
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-11",
+          "start_time": "07:30",
+          "location_type": "temple",
+          "city": null,
+          "language": "Telugu",
+          "total_cents": 5100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "No valid slot was available on the preferred date, 2026-11-08, because the only qualified Telugu-speaking priest is away; the other qualified priests do not speak Telugu. The suggested alternatives, 2026-11-05 and 2026-11-11, are within three days of the preferred date and retain the requested morning window.",
+      "wall_seconds": 11.19,
+      "usage": {
+        "input_tokens": 6454,
+        "cached_input_tokens": 3913,
+        "cache_write_tokens": 2037,
+        "output_tokens": 890,
+        "reasoning_tokens": 202,
+        "model_requests": 4,
+        "tool_calls": 5,
+        "cost_usd": 0.00078915,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2652,
+          "model_requests": 1,
+          "input_tokens": 1475,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 43,
+          "output_tokens": 148,
+          "tool_calls": 0,
+          "cost_usd": 0.000105035,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 8507,
+          "model_requests": 3,
+          "input_tokens": 4979,
+          "cached_input_tokens": 2607,
+          "cache_write_tokens": 1994,
+          "output_tokens": 742,
+          "tool_calls": 5,
+          "cost_usd": 0.00068412,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots",
+        "scheduling:search_available_slots",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C15_diwali_conflict",
+      "category": "date conflict (temple event)",
+      "text": "Archana on Sunday, November 8 at 6 pm for our family, please.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_archana",
+        "service_match_reason": "They asked for \u201cArchana.\u201d",
+        "preferred_dates": [
+          "2026-11-08"
+        ],
+        "date_notes": null,
+        "time_preference": "exact",
+        "earliest_start": "18:00",
+        "latest_start": "18:00",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests an Archana for their family on November 8, 2026, at 6:00 pm at the temple."
+      },
+      "options": [
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-07",
+          "start_time": "18:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 2500
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-07",
+          "start_time": "18:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 2500
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-09",
+          "start_time": "18:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 2500
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "No valid 18:00 option was available on the preferred date, 2026-11-08: the other qualified priests were outside Sunday hours, and one priest was away. Open alternatives at the exact requested time were found on 2026-11-07 and 2026-11-09; the listed service price is $25.",
+      "wall_seconds": 12.77,
+      "usage": {
+        "input_tokens": 8276,
+        "cached_input_tokens": 5476,
+        "cache_write_tokens": 2170,
+        "output_tokens": 927,
+        "reasoning_tokens": 296,
+        "model_requests": 5,
+        "tool_calls": 5,
+        "cost_usd": 0.00085251,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2755,
+          "model_requests": 1,
+          "input_tokens": 1474,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 42,
+          "output_tokens": 155,
+          "tool_calls": 0,
+          "cost_usd": 0.00010841,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 9986,
+          "model_requests": 4,
+          "input_tokens": 6802,
+          "cached_input_tokens": 4170,
+          "cache_write_tokens": 2128,
+          "output_tokens": 772,
+          "tool_calls": 5,
+          "cost_usd": 0.0007441,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots",
+        "scheduling:search_available_slots",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C16_seeded_booking_conflict",
+      "category": "date conflict (existing bookings)",
+      "text": "Abhishekam on Saturday, October 31 at 11 am, please.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 1 possible time that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 1,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_abhishekam",
+        "service_match_reason": "They requested \u201cAbhishekam.\u201d",
+        "preferred_dates": [
+          "2026-10-31"
+        ],
+        "date_notes": null,
+        "time_preference": "exact",
+        "earliest_start": "11:00",
+        "latest_start": "11:00",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests an Abhishekam at the temple on October 31, 2026, at 11:00 AM."
+      },
+      "options": [
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-10-31",
+          "start_time": "11:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 5100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "Only one qualified priest had an open slot at the requested date and exact time; the other qualified priests had schedule conflicts. This is an option for administrator review, not a booking or confirmation.",
+      "wall_seconds": 9.14,
+      "usage": {
+        "input_tokens": 5960,
+        "cached_input_tokens": 3778,
+        "cache_write_tokens": 1678,
+        "output_tokens": 556,
+        "reasoning_tokens": 188,
+        "model_requests": 4,
+        "tool_calls": 3,
+        "cost_usd": 0.00057593,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2384,
+          "model_requests": 1,
+          "input_tokens": 1473,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 41,
+          "output_tokens": 176,
+          "tool_calls": 0,
+          "cost_usd": 0.000118785,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 6724,
+          "model_requests": 3,
+          "input_tokens": 4487,
+          "cached_input_tokens": 2472,
+          "cache_write_tokens": 1637,
+          "output_tokens": 380,
+          "tool_calls": 3,
+          "cost_usd": 0.000457145,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C17_unavailable_service",
+      "category": "unavailable service",
+      "text": "Can the temple perform our wedding ceremony (vivah) on Saturday, November 21? About 150 guests.",
+      "status": "needs_info",
+      "error": null,
+      "member_message": "We don\u2019t have a wedding ceremony listed among the services available to request; is there another temple service you\u2019d like help with?",
+      "fields": {
+        "status": true,
+        "missing": true
+      },
+      "fields_correct": 2,
+      "fields_total": 2,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": null,
+        "service_match_reason": "They ask whether the temple can perform their \u201cwedding ceremony (vivah),\u201d which does not match a service in the catalog.",
+        "preferred_dates": [
+          "2026-11-21"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": 150,
+        "special_requirements": [],
+        "missing_fields": [
+          "service"
+        ],
+        "clarifying_question": "We don\u2019t have a wedding ceremony listed among the services available to request; is there another temple service you\u2019d like help with?",
+        "summary": "Member asks about a wedding ceremony (vivah) on 2026-11-21 at the temple, with about 150 guests."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": null,
+      "wall_seconds": 3.93,
+      "usage": {
+        "input_tokens": 1479,
+        "cached_input_tokens": 1306,
+        "cache_write_tokens": 47,
+        "output_tokens": 331,
+        "reasoning_tokens": 177,
+        "model_requests": 1,
+        "tool_calls": 0,
+        "cost_usd": 0.00019703,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 3910,
+          "model_requests": 1,
+          "input_tokens": 1479,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 47,
+          "output_tokens": 331,
+          "tool_calls": 0,
+          "cost_usd": 0.000197035,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": []
+    },
+    {
+      "id": "C18_contradictory_location",
+      "category": "contradictory request",
+      "text": "We'd like a griha pravesh performed in the temple hall on Saturday, November 21 in the morning.",
+      "status": "needs_info",
+      "error": null,
+      "member_message": "To check availability we still need: Please confirm that the home service location is Hamden.; Please confirm the member accepts a home-based Griha Pravesh, since the requested temple hall is not available for this service..",
+      "fields": {
+        "status": false,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 4,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": false,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "\u201cgriha pravesh\u201d matches Griha Pravesh.",
+        "preferred_dates": [
+          "2026-11-21"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "home",
+        "city": "Hamden",
+        "city_source": "member_profile",
+        "language": null,
+        "attendees": null,
+        "special_requirements": [
+          "Town taken from member profile \u2014 confirm",
+          "Member requested temple hall; Griha Pravesh is home-only."
+        ],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Griha Pravesh on Saturday, November 21, 2026, in the morning; they asked for the temple hall, but this service is home-only, and Hamden is taken from the member profile and needs confirmation."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": "Griha Pravesh is home-only, so the temple hall request cannot be accommodated. Hamden is within the service area (6 miles; no travel fee), but the request flags the profile town for confirmation; no scheduling options were searched pending clarification.",
+      "wall_seconds": 13.02,
+      "usage": {
+        "input_tokens": 5934,
+        "cached_input_tokens": 3736,
+        "cache_write_tokens": 1694,
+        "output_tokens": 918,
+        "reasoning_tokens": 533,
+        "model_requests": 4,
+        "tool_calls": 4,
+        "cost_usd": 0.00075851,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 5373,
+          "model_requests": 2,
+          "input_tokens": 3044,
+          "cached_input_tokens": 2660,
+          "cache_write_tokens": 132,
+          "output_tokens": 350,
+          "tool_calls": 1,
+          "cost_usd": 0.0002433,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 7627,
+          "model_requests": 2,
+          "input_tokens": 2890,
+          "cached_input_tokens": 1076,
+          "cache_write_tokens": 1562,
+          "output_tokens": 568,
+          "tool_calls": 3,
+          "cost_usd": 0.00051521,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "intake:get_member_profile",
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests"
+      ]
+    },
+    {
+      "id": "C19_contradictory_dates",
+      "category": "contradictory request (self-correction)",
+      "text": "Satyanarayan puja at the temple on Saturday, November 14 \u2014 sorry, I meant Sunday, November 8 \u2014 in the morning.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "They asked for \u201cSatyanarayan puja.\u201d",
+        "preferred_dates": [
+          "2026-11-08"
+        ],
+        "date_notes": "Corrected from Saturday, November 14 to Sunday, November 8.",
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Member requests Satyanarayan Puja at the temple on Sunday, November 8, 2026, in the morning."
+      },
+      "options": [
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-11-08",
+          "start_time": "07:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 15100
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-08",
+          "start_time": "08:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 15100
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-08",
+          "start_time": "11:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 15100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "The Satyanarayan Puja is 90 minutes and request-based. Pandit Venkatesh Iyer has no availability on the preferred date because he is away November 6\u201310; the three listed options are available starts returned by the scheduling search.",
+      "wall_seconds": 9.48,
+      "usage": {
+        "input_tokens": 6132,
+        "cached_input_tokens": 3828,
+        "cache_write_tokens": 1800,
+        "output_tokens": 687,
+        "reasoning_tokens": 175,
+        "model_requests": 4,
+        "tool_calls": 3,
+        "cost_usd": 0.00065718,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2239,
+          "model_requests": 1,
+          "input_tokens": 1486,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 54,
+          "output_tokens": 149,
+          "tool_calls": 0,
+          "cost_usd": 0.00010691,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 7210,
+          "model_requests": 3,
+          "input_tokens": 4646,
+          "cached_input_tokens": 2522,
+          "cache_write_tokens": 1746,
+          "output_tokens": 538,
+          "tool_calls": 3,
+          "cost_usd": 0.00055027,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C20_accessibility_naming",
+      "category": "accessibility + guests",
+      "text": "Namakaranam for our granddaughter at the temple on Saturday, November 14 in the morning, in Hindi. About 30 guests; my father uses a walker and will need a chair near the front.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "language": true,
+        "attendees": true,
+        "time": true,
+        "special_requirements": true
+      },
+      "fields_correct": 8,
+      "fields_total": 8,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_naming",
+        "service_match_reason": "The member requested \u201cNamakaranam\u201d for their granddaughter.",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": "Hindi",
+        "attendees": 30,
+        "special_requirements": [
+          "Father uses a walker; needs a chair near the front."
+        ],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Request for a Hindi Namakaranam for the member\u2019s granddaughter at the temple on November 14, 2026, in the morning, for about 30 guests; the member\u2019s father uses a walker and needs a chair near the front."
+      },
+      "options": [
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-11-14",
+          "start_time": "07:00",
+          "location_type": "temple",
+          "city": null,
+          "language": "Hindi",
+          "total_cents": 10100
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-14",
+          "start_time": "07:00",
+          "location_type": "temple",
+          "city": null,
+          "language": "Hindi",
+          "total_cents": 10100
+        },
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-11-14",
+          "start_time": "07:30",
+          "location_type": "temple",
+          "city": null,
+          "language": "Hindi",
+          "total_cents": 10100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "The requested date has multiple available morning options with Hindi-qualified priests. Please account for the attendee's request for a chair near the front; the scheduling results do not confirm an accessibility arrangement.",
+      "wall_seconds": 10.06,
+      "usage": {
+        "input_tokens": 6005,
+        "cached_input_tokens": 3788,
+        "cache_write_tokens": 1713,
+        "output_tokens": 685,
+        "reasoning_tokens": 162,
+        "model_requests": 4,
+        "tool_calls": 3,
+        "cost_usd": 0.0006449,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2516,
+          "model_requests": 1,
+          "input_tokens": 1498,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 66,
+          "output_tokens": 190,
+          "tool_calls": 0,
+          "cost_usd": 0.00012891,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 7516,
+          "model_requests": 3,
+          "input_tokens": 4507,
+          "cached_input_tokens": 2482,
+          "cache_write_tokens": 1647,
+          "output_tokens": 495,
+          "tool_calls": 3,
+          "cost_usd": 0.000515995,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C21_language_unavailable",
+      "category": "language unavailable",
+      "text": "Satyanarayan puja at the temple on Sunday, November 8 in Bengali, please.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "We couldn't find an open time that matches your request. The temple office will review it and contact you with alternatives. Nothing is booked yet.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "language": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "They asked for \u201cSatyanarayan puja.\u201d",
+        "preferred_dates": [
+          "2026-11-08"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": "Bengali",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Satyanarayan Puja at the temple on November 8, 2026, in Bengali."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": "No priest qualified for Satyanarayan Puja was listed as speaking Bengali, so no options were searched. The qualified priests returned speak other listed languages.",
+      "wall_seconds": 5.52,
+      "usage": {
+        "input_tokens": 4183,
+        "cached_input_tokens": 2346,
+        "cache_write_tokens": 1459,
+        "output_tokens": 351,
+        "reasoning_tokens": 71,
+        "model_requests": 3,
+        "tool_calls": 2,
+        "cost_usd": 0.00041914,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2205,
+          "model_requests": 1,
+          "input_tokens": 1476,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 44,
+          "output_tokens": 191,
+          "tool_calls": 0,
+          "cost_usd": 0.00012666,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 3288,
+          "model_requests": 2,
+          "input_tokens": 2707,
+          "cached_input_tokens": 1040,
+          "cache_write_tokens": 1415,
+          "output_tokens": 160,
+          "tool_calls": 2,
+          "cost_usd": 0.000292475,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests"
+      ]
+    },
+    {
+      "id": "C22_past_date",
+      "category": "invalid date",
+      "text": "I'd like an archana on Sunday, October 18 at 8 am.",
+      "status": "needs_info",
+      "error": null,
+      "member_message": "Could you tell us the date for this request?",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "missing": true
+      },
+      "fields_correct": 3,
+      "fields_total": 3,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_archana",
+        "service_match_reason": "The member asks for \u201can archana.\u201d",
+        "preferred_dates": [
+          "2026-10-18"
+        ],
+        "date_notes": "The requested date is in the past relative to today, 2026-10-25.",
+        "time_preference": "exact",
+        "earliest_start": "08:00",
+        "latest_start": "08:00",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests an Archana at the temple on October 18, 2026, at 8:00 AM; the requested date has passed."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": null,
+      "wall_seconds": 2.88,
+      "usage": {
+        "input_tokens": 1472,
+        "cached_input_tokens": 1306,
+        "cache_write_tokens": 40,
+        "output_tokens": 290,
+        "reasoning_tokens": 160,
+        "model_requests": 1,
+        "tool_calls": 0,
+        "cost_usd": 0.00017566,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2862,
+          "model_requests": 1,
+          "input_tokens": 1472,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 40,
+          "output_tokens": 290,
+          "tool_calls": 0,
+          "cost_usd": 0.00017566,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": []
+    },
+    {
+      "id": "C23_short_notice_griha",
+      "category": "lead-time policy",
+      "text": "Can we do a griha pravesh at our home in Hamden tomorrow morning?",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "We couldn't find an open time that matches your request. The temple office will review it and contact you with alternatives. Nothing is booked yet.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "They asked for \u201ca griha pravesh.\u201d",
+        "preferred_dates": [
+          "2026-10-26"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": "06:30",
+        "latest_start": "11:59",
+        "location_type": "home",
+        "city": "Hamden",
+        "city_source": "stated",
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member is requesting a Griha Pravesh at their home in Hamden tomorrow morning."
+      },
+      "options": [],
+      "dropped": [],
+      "notes_for_admin": "No valid Hamden home-service start is available on the requested date, 2026-10-26. The service requires at least 5 days' notice, while the request is only 1 day ahead; Hamden is within the service area and has no travel fee. A later date at least 5 days ahead would need to be searched.",
+      "wall_seconds": 12.8,
+      "usage": {
+        "input_tokens": 7545,
+        "cached_input_tokens": 5145,
+        "cache_write_tokens": 1770,
+        "output_tokens": 639,
+        "reasoning_tokens": 249,
+        "model_requests": 5,
+        "tool_calls": 4,
+        "cost_usd": 0.0006552,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2003,
+          "model_requests": 1,
+          "input_tokens": 1474,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 42,
+          "output_tokens": 141,
+          "tool_calls": 0,
+          "cost_usd": 0.00010141,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 10773,
+          "model_requests": 4,
+          "input_tokens": 6071,
+          "cached_input_tokens": 3839,
+          "cache_write_tokens": 1728,
+          "output_tokens": 498,
+          "tool_calls": 4,
+          "cost_usd": 0.00055379,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C24_ambiguous_time",
+      "category": "ambiguous time",
+      "text": "Satyanarayan puja at the temple on Sunday, November 8, whatever time the priest is free.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "The member asked for \u201cSatyanarayan puja.\u201d",
+        "preferred_dates": [
+          "2026-11-08"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member is requesting a Satyanarayan Puja at the temple on November 8, 2026, at any available time."
+      },
+      "options": [
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-11-08",
+          "start_time": "07:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 15100
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-08",
+          "start_time": "08:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 15100
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-08",
+          "start_time": "11:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 15100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "The requested date has 27 open starts; these options offer three different qualified priests and times. Pandit Venkatesh Iyer is away November 6\u201310, so no option from him was available.",
+      "wall_seconds": 9.21,
+      "usage": {
+        "input_tokens": 6005,
+        "cached_input_tokens": 3770,
+        "cache_write_tokens": 1731,
+        "output_tokens": 684,
+        "reasoning_tokens": 150,
+        "model_requests": 4,
+        "tool_calls": 3,
+        "cost_usd": 0.00064648,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2473,
+          "model_requests": 1,
+          "input_tokens": 1479,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 47,
+          "output_tokens": 181,
+          "tool_calls": 0,
+          "cost_usd": 0.000122035,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 6711,
+          "model_requests": 3,
+          "input_tokens": 4526,
+          "cached_input_tokens": 2464,
+          "cache_write_tokens": 1684,
+          "output_tokens": 503,
+          "tool_calls": 3,
+          "cost_usd": 0.00052444,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C25_time_range_tamil",
+      "category": "explicit time range + language",
+      "text": "Satyanarayan puja at our home in Branford on Saturday, November 14, starting between 10 and 11:30 am, in Tamil.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 2 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "language": true,
+        "time": true
+      },
+      "fields_correct": 7,
+      "fields_total": 7,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "\u201cSatyanarayan puja\u201d",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "range",
+        "earliest_start": "10:00",
+        "latest_start": "11:30",
+        "location_type": "home",
+        "city": "Branford",
+        "city_source": "stated",
+        "language": "Tamil",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Satyanarayan Puja at their home in Branford on November 14, 2026, with a start between 10:00 and 11:30 am, in Tamil."
+      },
+      "options": [
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-14",
+          "start_time": "10:00",
+          "location_type": "home",
+          "city": "Branford",
+          "language": "Tamil",
+          "total_cents": 15100
+        },
+        {
+          "priest_id": "pr_iyer",
+          "date": "2026-11-14",
+          "start_time": "10:30",
+          "location_type": "home",
+          "city": "Branford",
+          "language": "Tamil",
+          "total_cents": 15100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "Only Pandit Iyer among the qualified priests speaks Tamil. Branford is 10 miles away and within the service radius; the travel lookup lists no travel fee.",
+      "wall_seconds": 9.55,
+      "usage": {
+        "input_tokens": 6206,
+        "cached_input_tokens": 3876,
+        "cache_write_tokens": 1826,
+        "output_tokens": 746,
+        "reasoning_tokens": 198,
+        "model_requests": 4,
+        "tool_calls": 4,
+        "cost_usd": 0.00069041,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2466,
+          "model_requests": 1,
+          "input_tokens": 1489,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 57,
+          "output_tokens": 206,
+          "tool_calls": 0,
+          "cost_usd": 0.000135785,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 7058,
+          "model_requests": 3,
+          "input_tokens": 4717,
+          "cached_input_tokens": 2570,
+          "cache_write_tokens": 1769,
+          "output_tokens": 540,
+          "tool_calls": 4,
+          "cost_usd": 0.000554625,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C26_afternoon_griha",
+      "category": "afternoon + home",
+      "text": "Griha pravesh at our home in Woodbridge on Sunday, November 8 in the afternoon.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 2 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "\u201cGriha pravesh\u201d at their home matches Griha Pravesh.",
+        "preferred_dates": [
+          "2026-11-08"
+        ],
+        "date_notes": null,
+        "time_preference": "afternoon",
+        "earliest_start": "12:00",
+        "latest_start": "16:59",
+        "location_type": "home",
+        "city": "Woodbridge",
+        "city_source": "stated",
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests a Griha Pravesh at their home in Woodbridge on Sunday, November 8, 2026, in the afternoon."
+      },
+      "options": [
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-08",
+          "start_time": "12:00",
+          "location_type": "home",
+          "city": "Woodbridge",
+          "language": null,
+          "total_cents": 25100
+        },
+        {
+          "priest_id": "pr_joshi",
+          "date": "2026-11-08",
+          "start_time": "12:30",
+          "location_type": "home",
+          "city": "Woodbridge",
+          "language": null,
+          "total_cents": 25100
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "Woodbridge is within the service area; the listed travel fee is $0. The other qualified priests had no listed availability: one due to a temple event and one away; service is request-based with a five-day minimum lead time.",
+      "wall_seconds": 9.98,
+      "usage": {
+        "input_tokens": 6098,
+        "cached_input_tokens": 3843,
+        "cache_write_tokens": 1751,
+        "output_tokens": 652,
+        "reasoning_tokens": 180,
+        "model_requests": 4,
+        "tool_calls": 4,
+        "cost_usd": 0.00063371,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2302,
+          "model_requests": 1,
+          "input_tokens": 1478,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 46,
+          "output_tokens": 146,
+          "tool_calls": 0,
+          "cost_usd": 0.00010441,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 7646,
+          "model_requests": 3,
+          "input_tokens": 4620,
+          "cached_input_tokens": 2537,
+          "cache_write_tokens": 1705,
+          "output_tokens": 506,
+          "tool_calls": 4,
+          "cost_usd": 0.000529295,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:get_travel_info",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    },
+    {
+      "id": "C27_archana_exact_morning",
+      "category": "exact time",
+      "text": "Archana on Tuesday, November 3 at 8am please, for my exam results.",
+      "status": "pending_review",
+      "error": null,
+      "member_message": "Thank you. We found 2 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "critical_bookings_created": 0,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_archana",
+        "service_match_reason": "The member asks for \u201cArchana.\u201d",
+        "preferred_dates": [
+          "2026-11-03"
+        ],
+        "date_notes": null,
+        "time_preference": "exact",
+        "earliest_start": "08:00",
+        "latest_start": "08:00",
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [
+          "Archana for exam results"
+        ],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "The member requests an Archana at the temple on November 3, 2026, at 8:00 AM, for exam results."
+      },
+      "options": [
+        {
+          "priest_id": "pr_dube",
+          "date": "2026-11-03",
+          "start_time": "08:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 2500
+        },
+        {
+          "priest_id": "pr_sharma",
+          "date": "2026-11-03",
+          "start_time": "08:00",
+          "location_type": "temple",
+          "city": null,
+          "language": null,
+          "total_cents": 2500
+        }
+      ],
+      "dropped": [],
+      "notes_for_admin": "Archana is listed as a 15-minute temple service with a $25 price. Only these two priests had a valid slot at the exact requested time; the others' search results showed Tuesday schedule conflicts.",
+      "wall_seconds": 12.03,
+      "usage": {
+        "input_tokens": 6015,
+        "cached_input_tokens": 3817,
+        "cache_write_tokens": 1694,
+        "output_tokens": 568,
+        "reasoning_tokens": 145,
+        "model_requests": 4,
+        "tool_calls": 3,
+        "cost_usd": 0.00058432,
+        "portkey_cache_hits": 0
+      },
+      "runs": [
+        {
+          "agent": "intake",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 2567,
+          "model_requests": 1,
+          "input_tokens": 1475,
+          "cached_input_tokens": 1306,
+          "cache_write_tokens": 43,
+          "output_tokens": 171,
+          "tool_calls": 0,
+          "cost_usd": 0.000116535,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH",
+          "portkey_cache_hits": 0
+        },
+        {
+          "agent": "scheduling",
+          "status": "ok",
+          "error": null,
+          "response_model": "gpt-6-luna-global",
+          "latency_ms": 9438,
+          "model_requests": 3,
+          "input_tokens": 4540,
+          "cached_input_tokens": 2511,
+          "cache_write_tokens": 1651,
+          "output_tokens": 397,
+          "tool_calls": 3,
+          "cost_usd": 0.000467785,
+          "provider": "azure-openai",
+          "portkey_target": "config.targets[2]",
+          "portkey_cache": "REFRESH,REFRESH,REFRESH",
+          "portkey_cache_hits": 0
+        }
+      ],
+      "tool_sequence": [
+        "scheduling:get_service_details",
+        "scheduling:find_qualified_priests",
+        "scheduling:search_available_slots"
+      ]
+    }
+  ]
+}

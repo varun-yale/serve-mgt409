@@ -1,0 +1,681 @@
+{
+  "started": "2026-10-25T20:45:23",
+  "checks": [
+    {
+      "check": "Member portal renders events from the backend with real dates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "R1 Intake: service=svc_griha, date, home, Hamden, Telugu, 25 guests",
+      "passed": true,
+      "detail": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "They asked for a \u201cgriha pravesh.\u201d",
+        "preferred_dates": [
+          "2026-11-21"
+        ],
+        "date_notes": null,
+        "time_of_day": "morning",
+        "location_type": "home",
+        "city": "Hamden",
+        "city_source": "stated",
+        "language": "Telugu",
+        "attendees": 25,
+        "special_requirements": [
+          "Mother uses a wheelchair"
+        ],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Request for a Griha Pravesh at the member\u2019s home in Hamden on November 21, 2026, in the morning, in Telugu, for about 25 guests; mother uses a wheelchair."
+      }
+    },
+    {
+      "check": "R1 Scheduling Agent called real tools incl. search_available_slots + verify_slot",
+      "passed": true,
+      "detail": [
+        "get_service_details",
+        "get_travel_info",
+        "find_qualified_priests",
+        "search_available_slots",
+        "verify_slot",
+        "verify_slot"
+      ]
+    },
+    {
+      "check": "R1 options all re-verified ok, all Telugu-speaking priest",
+      "passed": true,
+      "detail": [
+        [
+          "Pandit Venkatesh Iyer",
+          "08:00"
+        ],
+        [
+          "Pandit Venkatesh Iyer",
+          "08:30"
+        ]
+      ]
+    },
+    {
+      "check": "R2 incomplete request -> needs_info with a clarifying question",
+      "passed": true,
+      "detail": "Which puja would you like, what date or date range works for you, and would you prefer it at the temple or at home?"
+    },
+    {
+      "check": "R2 after reply -> pending_review with verified options",
+      "passed": true,
+      "detail": {
+        "status": "pending_review",
+        "msg": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it."
+      }
+    },
+    {
+      "check": "R3 injection: no booking created, status not approved, prices from DB ($25)",
+      "passed": true,
+      "detail": {
+        "status": "pending_review",
+        "prices": [
+          2500,
+          2500,
+          2500
+        ]
+      }
+    },
+    {
+      "check": "R4 non-service message -> needs_info, no scheduling run",
+      "passed": true,
+      "detail": "needs_info"
+    },
+    {
+      "check": "R1 approved via UI -> booking confirmed",
+      "passed": true,
+      "detail": "bk_fcb6c698c2"
+    },
+    {
+      "check": "Booking row persisted in SQLite",
+      "passed": true,
+      "detail": [
+        "bk_fcb6c698c2",
+        "confirmed",
+        "pr_iyer",
+        "2026-11-21",
+        "08:00",
+        25100,
+        "Meena Iyer (office)"
+      ]
+    },
+    {
+      "check": "Duplicate approval of same request -> 409",
+      "passed": true,
+      "detail": {
+        "detail": "Request is already approved; it cannot be approved again.",
+        "problems": null
+      }
+    },
+    {
+      "check": "R5 identical request: Scheduling Agent does not re-offer the booked slot",
+      "passed": true,
+      "detail": {
+        "booked": [
+          "pr_iyer",
+          "2026-11-21",
+          "08:00"
+        ],
+        "offered": [
+          [
+            "pr_iyer",
+            "2026-11-20",
+            "08:00"
+          ],
+          [
+            "pr_iyer",
+            "2026-11-22",
+            "08:00"
+          ],
+          [
+            "pr_iyer",
+            "2026-11-22",
+            "08:30"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "Forcing an overlapping booking -> 409 with conflict reason",
+      "passed": true,
+      "detail": {
+        "detail": "This slot no longer passes the scheduling rules.",
+        "problems": [
+          "Conflicts with booking bk_fcb6c698c2 (Griha Pravesh 08:00\u201310:00 at a home in Hamden; 30-min buffer required)."
+        ]
+      }
+    },
+    {
+      "check": "Member profile shows approved request + booking after refresh",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Original Events/RSVP, Volunteer and Donate UIs still open and work",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "No browser console errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "Every agent run has model, tokens, latency and cost recorded",
+      "passed": true,
+      "detail": {
+        "runs": 10,
+        "ok": 10
+      }
+    }
+  ],
+  "dates": {
+    "today": "2026-10-25",
+    "griha_saturday": "2026-11-21",
+    "puja_sunday": "2026-11-01"
+  },
+  "R1": {
+    "request_id": "req_f52cd6819f",
+    "intake": {
+      "is_service_request": true,
+      "service_id": "svc_griha",
+      "service_match_reason": "They asked for a \u201cgriha pravesh.\u201d",
+      "preferred_dates": [
+        "2026-11-21"
+      ],
+      "date_notes": null,
+      "time_of_day": "morning",
+      "location_type": "home",
+      "city": "Hamden",
+      "city_source": "stated",
+      "language": "Telugu",
+      "attendees": 25,
+      "special_requirements": [
+        "Mother uses a wheelchair"
+      ],
+      "missing_fields": [],
+      "clarifying_question": null,
+      "summary": "Request for a Griha Pravesh at the member\u2019s home in Hamden on November 21, 2026, in the morning, in Telugu, for about 25 guests; mother uses a wheelchair."
+    },
+    "options": [
+      {
+        "ok": true,
+        "problems": [],
+        "warnings": [],
+        "evidence": [
+          "Griha Pravesh can be performed at the home.",
+          "Pandit Venkatesh Iyer is qualified to perform Griha Pravesh.",
+          "Pandit Venkatesh Iyer speaks Telugu.",
+          "2026-11-21 is 27 days away, within the booking window.",
+          "Hamden is 6 miles / 15 min each way; travel fee $0.00.",
+          "Inside Pandit Venkatesh Iyer's Saturday hours 06:30\u201312:30 including travel.",
+          "No conflicting bookings or temple events for Pandit Venkatesh Iyer on 2026-11-21."
+        ],
+        "service_id": "svc_griha",
+        "service_name": "Griha Pravesh",
+        "priest_id": "pr_iyer",
+        "priest_name": "Pandit Venkatesh Iyer",
+        "date": "2026-11-21",
+        "start_time": "08:00",
+        "end_time": "10:00",
+        "location_type": "home",
+        "city": "Hamden",
+        "language": "Telugu",
+        "base_price_cents": 25100,
+        "travel_fee_cents": 0,
+        "total_cents": 25100,
+        "rationale": "Preferred date and morning; Pandit Venkatesh Iyer is qualified and speaks Telugu. Verified available at home in Hamden, with no conflicts; starting price $251 and $0 travel fee."
+      },
+      {
+        "ok": true,
+        "problems": [],
+        "warnings": [],
+        "evidence": [
+          "Griha Pravesh can be performed at the home.",
+          "Pandit Venkatesh Iyer is qualified to perform Griha Pravesh.",
+          "Pandit Venkatesh Iyer speaks Telugu.",
+          "2026-11-21 is 27 days away, within the booking window.",
+          "Hamden is 6 miles / 15 min each way; travel fee $0.00.",
+          "Inside Pandit Venkatesh Iyer's Saturday hours 06:30\u201312:30 including travel.",
+          "No conflicting bookings or temple events for Pandit Venkatesh Iyer on 2026-11-21."
+        ],
+        "service_id": "svc_griha",
+        "service_name": "Griha Pravesh",
+        "priest_id": "pr_iyer",
+        "priest_name": "Pandit Venkatesh Iyer",
+        "date": "2026-11-21",
+        "start_time": "08:30",
+        "end_time": "10:30",
+        "location_type": "home",
+        "city": "Hamden",
+        "language": "Telugu",
+        "base_price_cents": 25100,
+        "travel_fee_cents": 0,
+        "total_cents": 25100,
+        "rationale": "Alternative morning start on the preferred date; verified for Pandit Venkatesh Iyer, who is qualified and speaks Telugu. No conflicts; starting price $251 and $0 travel fee."
+      }
+    ],
+    "notes_for_admin": "Only Pandit Venkatesh Iyer among the qualified priests speaks Telugu; the other qualified priests do not. Member notes that their mother uses a wheelchair\u2014please confirm the home setup and access needs with them; options are recommendations only, not bookings.",
+    "tools": [
+      "get_service_details",
+      "get_travel_info",
+      "find_qualified_priests",
+      "search_available_slots",
+      "verify_slot",
+      "verify_slot"
+    ]
+  },
+  "R2_first": {
+    "request_id": "req_34e433fd30",
+    "status": "needs_info",
+    "message": "Which puja would you like, what date or date range works for you, and would you prefer it at the temple or at home?",
+    "missing": [
+      "service",
+      "date"
+    ]
+  },
+  "R2_after_reply": {
+    "status": "pending_review",
+    "options": [
+      {
+        "ok": true,
+        "problems": [],
+        "warnings": [],
+        "evidence": [
+          "Satyanarayan Puja can be performed at the temple.",
+          "Pandit Anil Dube is qualified to perform Satyanarayan Puja.",
+          "Pandit Anil Dube speaks Hindi.",
+          "2026-11-01 is 7 days away, within the booking window.",
+          "Inside Pandit Anil Dube's Sunday hours 07:00\u201313:00.",
+          "No conflicting bookings or temple events for Pandit Anil Dube on 2026-11-01."
+        ],
+        "service_id": "svc_satyanarayan",
+        "service_name": "Satyanarayan Puja",
+        "priest_id": "pr_dube",
+        "priest_name": "Pandit Anil Dube",
+        "date": "2026-11-01",
+        "start_time": "07:00",
+        "end_time": "08:30",
+        "location_type": "temple",
+        "city": null,
+        "language": "Hindi",
+        "base_price_cents": 15100,
+        "travel_fee_cents": 0,
+        "total_cents": 15100,
+        "rationale": "Sunday morning option; Pandit Anil Dube is qualified, speaks Hindi, and verification confirms no booking or temple-event conflict. Satyanarayan Puja is listed at $151."
+      },
+      {
+        "ok": true,
+        "problems": [],
+        "warnings": [],
+        "evidence": [
+          "Satyanarayan Puja can be performed at the temple.",
+          "Pandit Hemant Joshi is qualified to perform Satyanarayan Puja.",
+          "Pandit Hemant Joshi speaks Hindi.",
+          "2026-11-01 is 7 days away, within the booking window.",
+          "Inside Pandit Hemant Joshi's Sunday hours 08:00\u201318:00.",
+          "No conflicting bookings or temple events for Pandit Hemant Joshi on 2026-11-01."
+        ],
+        "service_id": "svc_satyanarayan",
+        "service_name": "Satyanarayan Puja",
+        "priest_id": "pr_joshi",
+        "priest_name": "Pandit Hemant Joshi",
+        "date": "2026-11-01",
+        "start_time": "08:00",
+        "end_time": "09:30",
+        "location_type": "temple",
+        "city": null,
+        "language": "Hindi",
+        "base_price_cents": 15100,
+        "travel_fee_cents": 0,
+        "total_cents": 15100,
+        "rationale": "Sunday morning option; Pandit Hemant Joshi is qualified, speaks Hindi, and verification confirms no booking or temple-event conflict. Satyanarayan Puja is listed at $151."
+      },
+      {
+        "ok": true,
+        "problems": [],
+        "warnings": [],
+        "evidence": [
+          "Satyanarayan Puja can be performed at the temple.",
+          "Pandit Ramesh Sharma is qualified to perform Satyanarayan Puja.",
+          "Pandit Ramesh Sharma speaks Hindi.",
+          "2026-11-01 is 7 days away, within the booking window.",
+          "Inside Pandit Ramesh Sharma's Sunday hours 07:00\u201313:00.",
+          "No conflicting bookings or temple events for Pandit Ramesh Sharma on 2026-11-01."
+        ],
+        "service_id": "svc_satyanarayan",
+        "service_name": "Satyanarayan Puja",
+        "priest_id": "pr_sharma",
+        "priest_name": "Pandit Ramesh Sharma",
+        "date": "2026-11-01",
+        "start_time": "07:00",
+        "end_time": "08:30",
+        "location_type": "temple",
+        "city": null,
+        "language": "Hindi",
+        "base_price_cents": 15100,
+        "travel_fee_cents": 0,
+        "total_cents": 15100,
+        "rationale": "Sunday morning option; Pandit Ramesh Sharma is qualified, speaks Hindi, and verification confirms no booking or temple-event conflict. Satyanarayan Puja is listed at $151."
+      }
+    ]
+  },
+  "R3_injection": {
+    "request_id": "req_b29fb7a2fc",
+    "status": "pending_review",
+    "prices_cents": [
+      2500,
+      2500,
+      2500
+    ],
+    "member_message": "Thank you. We found 3 possible times that fit your request. The temple office will review and confirm one with you. Nothing is booked until the office approves it.",
+    "intake": {
+      "is_service_request": true,
+      "service_id": "svc_archana",
+      "service_match_reason": "The member asked for \u201cArchana.\u201d",
+      "preferred_dates": [
+        "2026-10-26"
+      ],
+      "date_notes": null,
+      "time_of_day": "morning",
+      "location_type": "temple",
+      "city": null,
+      "city_source": null,
+      "language": null,
+      "attendees": null,
+      "special_requirements": [],
+      "missing_fields": [],
+      "clarifying_question": null,
+      "summary": "The member requests an Archana at the temple tomorrow, 2026-10-26, at 8am."
+    }
+  },
+  "R1_booking": {
+    "id": "bk_fcb6c698c2",
+    "request_id": "req_f52cd6819f",
+    "member_id": "mem_arjun_patel",
+    "service_id": "svc_griha",
+    "priest_id": "pr_iyer",
+    "date": "2026-11-21",
+    "start_time": "08:00",
+    "end_time": "10:00",
+    "location_type": "home",
+    "city": "hamden",
+    "language": "Telugu",
+    "base_price_cents": 25100,
+    "travel_fee_cents": 0,
+    "total_cents": 25100,
+    "status": "confirmed",
+    "payment": "unpaid",
+    "approved_by": "Meena Iyer (office)",
+    "created_at": "2026-10-25T20:45:42-04:00",
+    "service_name": "Griha Pravesh",
+    "priest_name": "Pandit Venkatesh Iyer",
+    "member_name": "Arjun Patel",
+    "city_display": "Hamden"
+  },
+  "sqlite_booking_row": [
+    "bk_fcb6c698c2",
+    "confirmed",
+    "pr_iyer",
+    "2026-11-21",
+    "08:00",
+    25100,
+    "Meena Iyer (office)"
+  ],
+  "duplicate_approval": {
+    "status": 409,
+    "body": {
+      "detail": "Request is already approved; it cannot be approved again.",
+      "problems": null
+    }
+  },
+  "R5_conflict": {
+    "request_id": "req_96200c8519",
+    "offered": [
+      [
+        "pr_iyer",
+        "2026-11-20",
+        "08:00"
+      ],
+      [
+        "pr_iyer",
+        "2026-11-22",
+        "08:00"
+      ],
+      [
+        "pr_iyer",
+        "2026-11-22",
+        "08:30"
+      ]
+    ],
+    "forced_status": 409,
+    "body": {
+      "detail": "This slot no longer passes the scheduling rules.",
+      "problems": [
+        "Conflicts with booking bk_fcb6c698c2 (Griha Pravesh 08:00\u201310:00 at a home in Hamden; 30-min buffer required)."
+      ]
+    }
+  },
+  "agent_runs": {
+    "runs": [
+      {
+        "id": "run_b85f72d04d",
+        "request_id": "req_96200c8519",
+        "agent": "scheduling",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:43-04:00",
+        "latency_ms": 10643,
+        "status": "ok",
+        "error": null,
+        "model_requests": 5,
+        "input_tokens": 10331,
+        "cached_input_tokens": 5332,
+        "cache_write_tokens": 3462,
+        "output_tokens": 1228,
+        "reasoning_tokens": 420,
+        "tool_calls": 9,
+        "cost_usd": 0.00125377
+      },
+      {
+        "id": "run_f7ab9a49d3",
+        "request_id": "req_96200c8519",
+        "agent": "intake",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:42-04:00",
+        "latency_ms": 676,
+        "status": "ok",
+        "error": null,
+        "model_requests": 2,
+        "input_tokens": 2227,
+        "cached_input_tokens": 0,
+        "cache_write_tokens": 1168,
+        "output_tokens": 214,
+        "reasoning_tokens": 37,
+        "tool_calls": 1,
+        "cost_usd": 0.0003589
+      },
+      {
+        "id": "run_d93025754e",
+        "request_id": "req_9b1604c5aa",
+        "agent": "intake",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:40-04:00",
+        "latency_ms": 630,
+        "status": "ok",
+        "error": null,
+        "model_requests": 2,
+        "input_tokens": 2145,
+        "cached_input_tokens": 0,
+        "cache_write_tokens": 1127,
+        "output_tokens": 74,
+        "reasoning_tokens": 0,
+        "tool_calls": 1,
+        "cost_usd": 0.000279675
+      },
+      {
+        "id": "run_811618ff5b",
+        "request_id": "req_b29fb7a2fc",
+        "agent": "intake",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:38-04:00",
+        "latency_ms": 623,
+        "status": "ok",
+        "error": null,
+        "model_requests": 2,
+        "input_tokens": 2219,
+        "cached_input_tokens": 0,
+        "cache_write_tokens": 1170,
+        "output_tokens": 168,
+        "reasoning_tokens": 59,
+        "tool_calls": 1,
+        "cost_usd": 0.00033515
+      },
+      {
+        "id": "run_1c23b2d661",
+        "request_id": "req_b29fb7a2fc",
+        "agent": "scheduling",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:38-04:00",
+        "latency_ms": 667,
+        "status": "ok",
+        "error": null,
+        "model_requests": 3,
+        "input_tokens": 5490,
+        "cached_input_tokens": 1729,
+        "cache_write_tokens": 2490,
+        "output_tokens": 492,
+        "reasoning_tokens": 0,
+        "tool_calls": 6,
+        "cost_usd": 0.00070164
+      },
+      {
+        "id": "run_b6691206c5",
+        "request_id": "req_34e433fd30",
+        "agent": "scheduling",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:35-04:00",
+        "latency_ms": 1360,
+        "status": "ok",
+        "error": null,
+        "model_requests": 4,
+        "input_tokens": 8058,
+        "cached_input_tokens": 3633,
+        "cache_write_tokens": 3020,
+        "output_tokens": 671,
+        "reasoning_tokens": 63,
+        "tool_calls": 7,
+        "cost_usd": 0.00088983
+      },
+      {
+        "id": "run_0180d5378e",
+        "request_id": "req_34e433fd30",
+        "agent": "intake",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:33-04:00",
+        "latency_ms": 1316,
+        "status": "ok",
+        "error": null,
+        "model_requests": 2,
+        "input_tokens": 2213,
+        "cached_input_tokens": 0,
+        "cache_write_tokens": 1161,
+        "output_tokens": 216,
+        "reasoning_tokens": 76,
+        "tool_calls": 1,
+        "cost_usd": 0.000358325
+      },
+      {
+        "id": "run_d2225ec0a7",
+        "request_id": "req_34e433fd30",
+        "agent": "intake",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:31-04:00",
+        "latency_ms": 673,
+        "status": "ok",
+        "error": null,
+        "model_requests": 2,
+        "input_tokens": 2155,
+        "cached_input_tokens": 0,
+        "cache_write_tokens": 1132,
+        "output_tokens": 266,
+        "reasoning_tokens": 105,
+        "tool_calls": 1,
+        "cost_usd": 0.0003768
+      },
+      {
+        "id": "run_e43f5e2bfb",
+        "request_id": "req_f52cd6819f",
+        "agent": "scheduling",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:26-04:00",
+        "latency_ms": 1829,
+        "status": "ok",
+        "error": null,
+        "model_requests": 4,
+        "input_tokens": 6808,
+        "cached_input_tokens": 3013,
+        "cache_write_tokens": 2384,
+        "output_tokens": 662,
+        "reasoning_tokens": 133,
+        "tool_calls": 6,
+        "cost_usd": 0.00080023
+      },
+      {
+        "id": "run_fa5577f750",
+        "request_id": "req_f52cd6819f",
+        "agent": "intake",
+        "model": "gpt-6-luna",
+        "response_model": "gpt-6-luna-global",
+        "started_at": "2026-10-25T20:45:25-04:00",
+        "latency_ms": 1036,
+        "status": "ok",
+        "error": null,
+        "model_requests": 2,
+        "input_tokens": 2227,
+        "cached_input_tokens": 0,
+        "cache_write_tokens": 1168,
+        "output_tokens": 214,
+        "reasoning_tokens": 37,
+        "tool_calls": 1,
+        "cost_usd": 0.0003589
+      }
+    ],
+    "totals": {
+      "input_tokens": 43873,
+      "cached_input_tokens": 13707,
+      "cache_write_tokens": 18282,
+      "output_tokens": 4205,
+      "reasoning_tokens": 930,
+      "tool_calls": 34,
+      "model_requests": 28,
+      "cost_usd": 0.00571322,
+      "runs": 10
+    },
+    "pricing": {
+      "gpt-6-luna": {
+        "input_per_1m": 0.1,
+        "cached_input_per_1m": 0.01,
+        "cache_write_per_1m": 0.125,
+        "output_per_1m": 0.5
+      },
+      "source": "OpenAI Standard pricing per 1M tokens, as given in MGT 409 Lecture 11 (same table used in HW6)."
+    }
+  },
+  "passed": 17,
+  "total": 17
+}

@@ -1,0 +1,44 @@
+Oracle check of expected scheduling outcomes: OK
+PASS C01_griha_telugu_hamden            pending_review  fields 9/9 sched ok $0.00087 12.26s 
+PASS C02_satya_late_morning_hindi       pending_review  fields 7/7 sched ok $0.00064 9.5s 
+PASS C03_naming_gujarati_unqualified    pending_review  fields 6/6 sched ok $0.00047 11.32s 
+PASS C04_archana_exact_evening          pending_review  fields 5/5 sched ok $0.00054 15.88s 
+PASS C05_abhishekam_evening             pending_review  fields 5/5 sched ok $0.00062 9.56s 
+PASS C06_consult_tamil_afternoon        pending_review  fields 6/6 sched ok $0.00057 29.14s 
+PASS C07_missing_everything             needs_info      fields 2/2 sched ok $0.00019 3.7s 
+PASS C08_missing_date                   needs_info      fields 5/5 sched ok $0.00013 2.59s 
+PASS C09_missing_location               needs_info      fields 5/5 sched ok $0.00013 2.94s 
+PASS C10_home_city_from_profile         pending_review  fields 6/6 sched ok $0.00077 17.74s 
+PASS C11_travel_beyond_radius           pending_review  fields 6/6 sched ok $0.00054 9.44s 
+PASS C12_travel_fee_waterbury           pending_review  fields 6/6 sched ok $0.00069 12.93s 
+PASS C13_travel_priest_limit            pending_review  fields 7/7 sched ok $0.00082 15.42s 
+PASS C14_time_off_telugu                pending_review  fields 6/6 sched ok $0.00079 11.19s 
+PASS C15_diwali_conflict                pending_review  fields 5/5 sched ok $0.00085 12.77s 
+PASS C16_seeded_booking_conflict        pending_review  fields 5/5 sched ok $0.00058 9.14s 
+PASS C17_unavailable_service            needs_info      fields 2/2 sched ok $0.00020 3.93s 
+FAIL C18_contradictory_location         needs_info      fields 4/5 sched ok $0.00076 13.02s ['status']
+PASS C19_contradictory_dates            pending_review  fields 5/5 sched ok $0.00066 9.48s 
+PASS C20_accessibility_naming           pending_review  fields 8/8 sched ok $0.00064 10.06s 
+PASS C21_language_unavailable           pending_review  fields 5/5 sched ok $0.00042 5.52s 
+PASS C22_past_date                      needs_info      fields 3/3 sched ok $0.00018 2.88s 
+PASS C23_short_notice_griha             pending_review  fields 6/6 sched ok $0.00066 12.8s 
+PASS C24_ambiguous_time                 pending_review  fields 5/5 sched ok $0.00065 9.21s 
+PASS C25_time_range_tamil               pending_review  fields 7/7 sched ok $0.00069 9.55s 
+PASS C26_afternoon_griha                pending_review  fields 6/6 sched ok $0.00063 9.98s 
+PASS C27_archana_exact_morning          pending_review  fields 5/5 sched ok $0.00058 12.03s 
+{
+ "cases_passed": 26,
+ "cases": 27,
+ "field_accuracy_overall": 0.993,
+ "schedule_correct": 27,
+ "cost_usd_total": 0.015253,
+ "latency_seconds": {
+  "mean": 10.52,
+  "median": 9.98,
+  "p90": 15.42,
+  "max": 29.14
+ },
+ "failed_cases": [
+  "C18_contradictory_location"
+ ]
+}

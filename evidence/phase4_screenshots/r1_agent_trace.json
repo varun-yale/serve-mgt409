@@ -1,0 +1,96 @@
+{
+  "source": "GET /api/admin/requests/req_667c93b88b on the running SERVE app (Phase 2 regression run R1), saved in Phase 5; no model call made",
+  "request_id": "req_667c93b88b",
+  "raw_text": "Hi, we just bought a house in Hamden and would love a griha pravesh on Saturday, November 21, in the morning if possible. We'd like the ceremony in Telugu. About 25 guests, and my mother uses a wheelchair.",
+  "status": "approved",
+  "agent_runs": [
+    {
+      "agent": "intake",
+      "response_model": "gpt-6-luna-global",
+      "latency_ms": 3680,
+      "input_tokens": 1507,
+      "cached_input_tokens": 1381,
+      "output_tokens": 205,
+      "tool_calls": 0,
+      "cost_usd": 0.00012891,
+      "portkey_cache": "REFRESH",
+      "provider": "azure-openai",
+      "tool_call_log": []
+    },
+    {
+      "agent": "scheduling",
+      "response_model": "gpt-6-luna-global",
+      "latency_ms": 9019,
+      "input_tokens": 6024,
+      "cached_input_tokens": 4878,
+      "output_tokens": 525,
+      "tool_calls": 4,
+      "cost_usd": 0.00044193,
+      "portkey_cache": "REFRESH,REFRESH,REFRESH,REFRESH",
+      "provider": "azure-openai",
+      "tool_call_log": [
+        {
+          "tool_name": "get_service_details",
+          "args_json": "{\"service_id\": \"svc_griha\"}",
+          "result_summary": "{\"service_id\": \"svc_griha\", \"name\": \"Griha Pravesh\", \"price_cents\": 25100, \"price_label\": \"Starting at $251\", \"duration_minutes\": 120, \"scheduling\": \"request_based\", \"location_mode\": \"home\", \"temple_room\": null, \"fixed_start_times\": null, \"min_lead_days\": 5, \"recommended_lead_days\": 21, \"enabled\": true}",
+          "ok": 1,
+          "duration_ms": 0,
+          "called_at": "2026-10-25T21:26:08-04:00",
+          "args": {
+            "service_id": "svc_griha"
+          }
+        },
+        {
+          "tool_name": "get_travel_info",
+          "args_json": "{\"city\": \"Hamden\"}",
+          "result_summary": "{\"city\": \"Hamden\", \"in_service_area_table\": true, \"miles_one_way\": 6, \"drive_minutes_one_way\": 15, \"travel_fee_cents\": 0, \"within_service_radius\": true}",
+          "ok": 1,
+          "duration_ms": 0,
+          "called_at": "2026-10-25T21:26:08-04:00",
+          "args": {
+            "city": "Hamden"
+          }
+        },
+        {
+          "tool_name": "find_qualified_priests",
+          "args_json": "{\"service_id\": \"svc_griha\", \"language\": \"Telugu\"}",
+          "result_summary": "[{\"priest_id\": \"pr_joshi\", \"name\": \"Pandit Hemant Joshi\", \"title\": \"Priest\", \"languages\": [\"English\", \"Gujarati\", \"Hindi\", \"Sanskrit\"], \"speaks_requested_language\": false, \"max_travel_miles\": 30}, {\"priest_id\": \"pr_sharma\", \"name\": \"Pandit Ramesh Sharma\", \"title\": \"Head Priest\", \"languages\": [\"English\", \"Hindi\", \"Sanskrit\"], \"speaks_requested_language\": false, \"max_travel_miles\": 40}, {\"priest_id\": \"pr_iyer\", \"name\": \"Pandit Venkatesh Iyer\", \"title\": \"Priest\", \"languages\": [\"English\", \"Sanskrit\", \"Tamil\", \"Telugu\"], \"speaks_requested_language\": true, \"max_travel_miles\": 35}]",
+          "ok": 1,
+          "duration_ms": 0,
+          "called_at": "2026-10-25T21:26:10-04:00",
+          "args": {
+            "service_id": "svc_griha",
+            "language": "Telugu"
+          }
+        },
+        {
+          "tool_name": "search_available_slots",
+          "args_json": "{\"service_id\": \"svc_griha\", \"date\": \"2026-11-21\", \"location_type\": \"home\", \"city\": \"Hamden\", \"language\": \"Telugu\", \"earliest_start\": \"06:30\", \"latest_start\": \"11:59\"}",
+          "result_summary": "{\"date\": \"2026-11-21\", \"open\": 5, \"slots\": [{\"priest_id\": \"pr_iyer\", \"start\": \"08:00\", \"total_cents\": 25100}, {\"priest_id\": \"pr_iyer\", \"start\": \"08:30\", \"total_cents\": 25100}], \"no_slot\": {\"Pandit Hemant Joshi\": [\"Pandit Hemant Joshi does not speak Telugu (speaks English, Gujarati, Hindi, Sanskrit).\"], \"Pandit Ramesh Sharma\": [\"Pandit Ramesh Sharma does not speak Telugu (speaks English, Hindi, Sanskrit).\"]}}",
+          "ok": 1,
+          "duration_ms": 3,
+          "called_at": "2026-10-25T21:26:12-04:00",
+          "args": {
+            "service_id": "svc_griha",
+            "date": "2026-11-21",
+            "location_type": "home",
+            "city": "Hamden",
+            "language": "Telugu",
+            "earliest_start": "06:30",
+            "latest_start": "11:59"
+          }
+        }
+      ]
+    }
+  ],
+  "booking": {
+    "id": "bk_991c13454e",
+    "status": "confirmed",
+    "priest_name": "Pandit Venkatesh Iyer",
+    "date": "2026-11-21",
+    "start_time": "08:00",
+    "end_time": "10:00",
+    "total_cents": 25100,
+    "approved_by": "Meena Iyer (office)"
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "summary": {
+    "requests_analyzed": 35,
+    "means_per_request": {
+      "qualified_priests": 3.5,
+      "qualified_and_language_ok": 2.5,
+      "calendars_to_open": 2.5,
+      "candidate_slots_to_test": 30.8,
+      "rule_checks": 276.9
+    },
+    "home_requests_needing_travel_lookup": 15,
+    "requests_where_correct_answer_is_no_availability": 9,
+    "with_serve": "Agents + rules engine perform these checks automatically (measured ~10.5 s, $0.00056 per request, optimized profile); the administrator reviews evidence and clicks Approve.",
+    "minutes_estimate": {
+      "label": "ESTIMATE (assumption, not measured)",
+      "assumption": "1 minute per priest-day calendar opened + 0.25 min per candidate slot tested + 3 min travel lookup if home + 4 min read/reply",
+      "mean_minutes": 15.5
+    }
+  },
+  "rows": [
+    {
+      "id": "C01_griha_telugu_hamden",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 1,
+      "calendars_to_open": 1,
+      "candidate_slots_to_test": 11,
+      "rule_checks": 99,
+      "travel_lookup": true,
+      "valid_options_exist": 5,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C02_satya_late_morning_hindi",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 12,
+      "rule_checks": 108,
+      "travel_lookup": false,
+      "valid_options_exist": 12,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C03_naming_gujarati_unqualified",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 0,
+      "calendars_to_open": 0,
+      "candidate_slots_to_test": 0,
+      "rule_checks": 0,
+      "travel_lookup": false,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    },
+    {
+      "id": "C04_archana_exact_evening",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 4,
+      "calendars_to_open": 4,
+      "candidate_slots_to_test": 4,
+      "rule_checks": 36,
+      "travel_lookup": false,
+      "valid_options_exist": 3,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C05_abhishekam_evening",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 3,
+      "rule_checks": 27,
+      "travel_lookup": false,
+      "valid_options_exist": 2,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C06_consult_tamil_afternoon",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 1,
+      "calendars_to_open": 1,
+      "candidate_slots_to_test": 2,
+      "rule_checks": 18,
+      "travel_lookup": false,
+      "valid_options_exist": 2,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C10_home_city_from_profile",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 33,
+      "rule_checks": 297,
+      "travel_lookup": true,
+      "valid_options_exist": 16,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C11_travel_beyond_radius",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 4,
+      "calendars_to_open": 4,
+      "candidate_slots_to_test": 112,
+      "rule_checks": 1008,
+      "travel_lookup": true,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    },
+    {
+      "id": "C12_travel_fee_waterbury",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 84,
+      "rule_checks": 756,
+      "travel_lookup": true,
+      "valid_options_exist": 27,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C13_travel_priest_limit",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 33,
+      "rule_checks": 297,
+      "travel_lookup": true,
+      "valid_options_exist": 10,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C14_time_off_telugu",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 1,
+      "calendars_to_open": 1,
+      "candidate_slots_to_test": 3,
+      "rule_checks": 27,
+      "travel_lookup": false,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    },
+    {
+      "id": "C15_diwali_conflict",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 4,
+      "calendars_to_open": 4,
+      "candidate_slots_to_test": 16,
+      "rule_checks": 144,
+      "travel_lookup": false,
+      "valid_options_exist": 4,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C16_seeded_booking_conflict",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 3,
+      "rule_checks": 27,
+      "travel_lookup": false,
+      "valid_options_exist": 1,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C18_contradictory_location",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 84,
+      "rule_checks": 756,
+      "travel_lookup": true,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    },
+    {
+      "id": "C19_contradictory_dates",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 4,
+      "calendars_to_open": 4,
+      "candidate_slots_to_test": 44,
+      "rule_checks": 396,
+      "travel_lookup": false,
+      "valid_options_exist": 20,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C20_accessibility_naming",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 2,
+      "calendars_to_open": 2,
+      "candidate_slots_to_test": 22,
+      "rule_checks": 198,
+      "travel_lookup": false,
+      "valid_options_exist": 19,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C21_language_unavailable",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 0,
+      "calendars_to_open": 0,
+      "candidate_slots_to_test": 0,
+      "rule_checks": 0,
+      "travel_lookup": false,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    },
+    {
+      "id": "C23_short_notice_griha",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 84,
+      "rule_checks": 756,
+      "travel_lookup": true,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    },
+    {
+      "id": "C24_ambiguous_time",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 4,
+      "calendars_to_open": 4,
+      "candidate_slots_to_test": 112,
+      "rule_checks": 1008,
+      "travel_lookup": false,
+      "valid_options_exist": 27,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C25_time_range_tamil",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 1,
+      "calendars_to_open": 1,
+      "candidate_slots_to_test": 4,
+      "rule_checks": 36,
+      "travel_lookup": true,
+      "valid_options_exist": 2,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C26_afternoon_griha",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 30,
+      "rule_checks": 270,
+      "travel_lookup": true,
+      "valid_options_exist": 5,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "C27_archana_exact_morning",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 4,
+      "calendars_to_open": 4,
+      "candidate_slots_to_test": 4,
+      "rule_checks": 36,
+      "travel_lookup": false,
+      "valid_options_exist": 2,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H01_gruhapravesam_casual",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 1,
+      "calendars_to_open": 1,
+      "candidate_slots_to_test": 11,
+      "rule_checks": 99,
+      "travel_lookup": true,
+      "valid_options_exist": 5,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H02_vratham_11ish",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 15,
+      "rule_checks": 135,
+      "travel_lookup": false,
+      "valid_options_exist": 13,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H03_archanai_after_6",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 4,
+      "calendars_to_open": 4,
+      "candidate_slots_to_test": 8,
+      "rule_checks": 72,
+      "travel_lookup": false,
+      "valid_options_exist": 6,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H04_namkaran_wheelchair",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 2,
+      "calendars_to_open": 2,
+      "candidate_slots_to_test": 56,
+      "rule_checks": 504,
+      "travel_lookup": false,
+      "valid_options_exist": 27,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H06_terse_abhishek",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 3,
+      "rule_checks": 27,
+      "travel_lookup": false,
+      "valid_options_exist": 2,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H07_named_priest_too_far",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 33,
+      "rule_checks": 297,
+      "travel_lookup": true,
+      "valid_options_exist": 3,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H08_consult_after_4",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 4,
+      "calendars_to_open": 4,
+      "candidate_slots_to_test": 12,
+      "rule_checks": 108,
+      "travel_lookup": false,
+      "valid_options_exist": 7,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H10_katha_after_lunch",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 1,
+      "calendars_to_open": 1,
+      "candidate_slots_to_test": 12,
+      "rule_checks": 108,
+      "travel_lookup": true,
+      "valid_options_exist": 12,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H11_named_priest_busy",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 3,
+      "rule_checks": 27,
+      "travel_lookup": false,
+      "valid_options_exist": 1,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H12_beyond_radius",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 84,
+      "rule_checks": 756,
+      "travel_lookup": true,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    },
+    {
+      "id": "H13_housewarming_tomorrow",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 3,
+      "calendars_to_open": 3,
+      "candidate_slots_to_test": 84,
+      "rule_checks": 756,
+      "travel_lookup": true,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    },
+    {
+      "id": "H14_price_claim",
+      "qualified_priests": 3,
+      "qualified_and_language_ok": 1,
+      "calendars_to_open": 1,
+      "candidate_slots_to_test": 28,
+      "rule_checks": 252,
+      "travel_lookup": false,
+      "valid_options_exist": 18,
+      "answer_is_no_availability": false
+    },
+    {
+      "id": "H15_all_caps_terse",
+      "qualified_priests": 4,
+      "qualified_and_language_ok": 1,
+      "calendars_to_open": 1,
+      "candidate_slots_to_test": 28,
+      "rule_checks": 252,
+      "travel_lookup": true,
+      "valid_options_exist": 0,
+      "answer_is_no_availability": true
+    }
+  ]
+}

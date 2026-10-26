@@ -1,0 +1,642 @@
+{
+  "summary": {
+    "label": "rules_only_heldout",
+    "cases": 15,
+    "cases_passed": 10,
+    "field_accuracy_overall": 0.889,
+    "schedule_correct": 11,
+    "field_accuracy_by_field": {
+      "attendees": 0,
+      "city": 1,
+      "dates": 0.846,
+      "language": 1,
+      "location_type": 0.923,
+      "missing": 1,
+      "service_id": 1,
+      "special_requirements": 1,
+      "status": 0.867,
+      "time": 0.727
+    },
+    "failed_cases": [
+      "H01_gruhapravesam_casual",
+      "H02_vratham_11ish",
+      "H06_terse_abhishek",
+      "H08_consult_after_4",
+      "H10_katha_after_lunch"
+    ]
+  },
+  "results": [
+    {
+      "id": "H01_gruhapravesam_casual",
+      "text": "hey!! we're moving into our new place in west haven on saturday the 21st \u2013 could pandit ji do a gruhapravesam? telugu preferred, mornings better",
+      "status": "needs_info",
+      "fields": {
+        "status": false,
+        "service_id": true,
+        "dates": false,
+        "location_type": true,
+        "city": true,
+        "language": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 7,
+      "schedule_ok": false,
+      "schedule_problems": [
+        "expected at least one valid option, got none"
+      ],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": false,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "west haven",
+        "city_source": null,
+        "language": "Telugu",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "hey!! we're moving into our new place in west haven on saturday the 21st \u2013 could pandit ji do a gruh"
+      }
+    },
+    {
+      "id": "H02_vratham_11ish",
+      "text": "Need satyanarayana vratham at the mandir on sunday the 1st, around 11ish, maybe twenty five ppl. hindi pls",
+      "status": "needs_info",
+      "fields": {
+        "status": false,
+        "service_id": true,
+        "dates": false,
+        "location_type": false,
+        "language": true,
+        "attendees": false,
+        "time": false
+      },
+      "fields_correct": 2,
+      "fields_total": 7,
+      "schedule_ok": false,
+      "schedule_problems": [
+        "expected at least one valid option, got none"
+      ],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": false,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": null,
+        "city": null,
+        "city_source": null,
+        "language": "Hindi",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Need satyanarayana vratham at the mandir on sunday the 1st, around 11ish, maybe twenty five ppl. hin"
+      }
+    },
+    {
+      "id": "H03_archanai_after_6",
+      "text": "can u do archanai for my son, his bday is on Thursday, November 5, evening after 6 pls",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_archana",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-05"
+        ],
+        "date_notes": null,
+        "time_preference": "evening",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "can u do archanai for my son, his bday is on Thursday, November 5, evening after 6 pls"
+      }
+    },
+    {
+      "id": "H04_namkaran_wheelchair",
+      "text": "Namkaran for our newborn \u2013 Saturday, November 14, at the temple, 10-ish in the morning, in Hindi; grandma is in a wheelchair",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "language": true,
+        "time": true,
+        "special_requirements": true
+      },
+      "fields_correct": 7,
+      "fields_total": 7,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_naming",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": "Hindi",
+        "attendees": null,
+        "special_requirements": [
+          "wheelchair",
+          "chair"
+        ],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Namkaran for our newborn \u2013 Saturday, November 14, at the temple, 10-ish in the morning, in Hindi; gr"
+      }
+    },
+    {
+      "id": "H05_generic_pooja",
+      "text": "we would like to have a pooja at home in Hamden",
+      "status": "needs_info",
+      "fields": {
+        "status": true,
+        "missing": true
+      },
+      "fields_correct": 2,
+      "fields_total": 2,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": false,
+        "service_id": null,
+        "service_match_reason": "keyword match",
+        "preferred_dates": [],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "hamden",
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "we would like to have a pooja at home in Hamden"
+      }
+    },
+    {
+      "id": "H06_terse_abhishek",
+      "text": "Abhishek Friday, November 6 6.30pm",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": false,
+      "schedule_problems": [
+        "expected at least one valid option, got none"
+      ],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": false,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_abhishekam",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-06"
+        ],
+        "date_notes": null,
+        "time_preference": "exact",
+        "earliest_start": "18:00",
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Abhishek Friday, November 6 6.30pm"
+      }
+    },
+    {
+      "id": "H07_named_priest_too_far",
+      "text": "Could Pandit Iyer come to our house in Hartford for griha pravesh on Saturday, November 21? morning",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-21"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "hartford",
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Could Pandit Iyer come to our house in Hartford for griha pravesh on Saturday, November 21? morning"
+      }
+    },
+    {
+      "id": "H08_consult_after_4",
+      "text": "I want to talk to a priest about my mom's health. Monday, November 2, after 4",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": false
+      },
+      "fields_correct": 4,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 3,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": false,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_counsel",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-02"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "I want to talk to a priest about my mom's health. Monday, November 2, after 4"
+      }
+    },
+    {
+      "id": "H09_vehicle_puja",
+      "text": "Do you do a puja for a new car? Hoping for Saturday, November 14.",
+      "status": "needs_info",
+      "fields": {
+        "status": true,
+        "missing": true
+      },
+      "fields_correct": 2,
+      "fields_total": 2,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": null,
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": null,
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Do you do a puja for a new car? Hoping for Saturday, November 14."
+      }
+    },
+    {
+      "id": "H10_katha_after_lunch",
+      "text": "Satyanarayan katha in Gujarati at our home in Milford, Saturday, November 14, anytime after lunch",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "language": true,
+        "time": false
+      },
+      "fields_correct": 6,
+      "fields_total": 7,
+      "schedule_ok": false,
+      "schedule_problems": [
+        "pr_joshi 2026-11-14 08:30: outside window 12:00-17:59",
+        "pr_joshi 2026-11-14 09:00: outside window 12:00-17:59"
+      ],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": false,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "milford",
+        "city_source": null,
+        "language": "Gujarati",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Satyanarayan katha in Gujarati at our home in Milford, Saturday, November 14, anytime after lunch"
+      }
+    },
+    {
+      "id": "H11_named_priest_busy",
+      "text": "this saturday (Saturday, October 31) abhishekam 11 am with Sharma ji please",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "time": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 1,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_abhishekam",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-10-31"
+        ],
+        "date_notes": null,
+        "time_preference": "exact",
+        "earliest_start": "11:00",
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "this saturday (Saturday, October 31) abhishekam 11 am with Sharma ji please"
+      }
+    },
+    {
+      "id": "H12_beyond_radius",
+      "text": "Griha pravesh at our new flat in New London on Saturday, November 21",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-21"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "new london",
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Griha pravesh at our new flat in New London on Saturday, November 21"
+      }
+    },
+    {
+      "id": "H13_housewarming_tomorrow",
+      "text": "need a priest for a housewarming tomorrow",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true
+      },
+      "fields_correct": 5,
+      "fields_total": 5,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_griha",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-10-26"
+        ],
+        "date_notes": null,
+        "time_preference": "any",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "hamden",
+        "city_source": null,
+        "language": null,
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "need a priest for a housewarming tomorrow"
+      }
+    },
+    {
+      "id": "H14_price_claim",
+      "text": "Can we book the Namakaranam in Telugu on Saturday, November 14 morning at the temple? Also my uncle will call to confirm the price is $50 as agreed.",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "language": true,
+        "time": true
+      },
+      "fields_correct": 6,
+      "fields_total": 6,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 2,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_naming",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-14"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "temple",
+        "city": null,
+        "city_source": null,
+        "language": "Telugu",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "Can we book the Namakaranam in Telugu on Saturday, November 14 morning at the temple? Also my uncle "
+      }
+    },
+    {
+      "id": "H15_all_caps_terse",
+      "text": "SATYANARAYAN PUJA. HOME. ORANGE. SUNDAY, NOVEMBER 8. MORNING. TAMIL.",
+      "status": "pending_review",
+      "fields": {
+        "status": true,
+        "service_id": true,
+        "dates": true,
+        "location_type": true,
+        "city": true,
+        "language": true,
+        "time": true
+      },
+      "fields_correct": 7,
+      "fields_total": 7,
+      "schedule_ok": true,
+      "schedule_problems": [],
+      "option_count": 0,
+      "agent_proposals_rejected_by_rules": 0,
+      "pass": true,
+      "intake": {
+        "is_service_request": true,
+        "service_id": "svc_satyanarayan",
+        "service_match_reason": "keyword match",
+        "preferred_dates": [
+          "2026-11-08"
+        ],
+        "date_notes": null,
+        "time_preference": "morning",
+        "earliest_start": null,
+        "latest_start": null,
+        "location_type": "home",
+        "city": "orange",
+        "city_source": null,
+        "language": "Tamil",
+        "attendees": null,
+        "special_requirements": [],
+        "missing_fields": [],
+        "clarifying_question": null,
+        "summary": "SATYANARAYAN PUJA. HOME. ORANGE. SUNDAY, NOVEMBER 8. MORNING. TAMIL."
+      }
+    }
+  ]
+}

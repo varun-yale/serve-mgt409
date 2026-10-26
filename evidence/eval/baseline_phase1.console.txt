@@ -1,0 +1,59 @@
+                 pydantic-ai v2.61.0 • Python 3.14.7
+
+      / \        agent: intake_agent • model: openai:gpt-6-luna • output: IntakeResult • tools: 2
+     /   \         capabilities: 0
+   /___.___\
+  /    |    \    observability: off — see every model and tool call live, with cost
+/      |      \    set it up free with Pydantic Logfire: https://pydantic.dev/ai-setup.md
+`---.._|_..---'    or use any OpenTelemetry backend: https://pydantic.dev/docs/ai/logfire/#otel
+
+                 goes away once observability is on — or PYDANTIC_AI_NO_BANNER=1
+Oracle check of expected scheduling outcomes: OK
+PASS C01_griha_telugu_hamden            pending_review  fields 9/9 sched ok $0.00111 19.41s 
+FAIL C02_satya_late_morning_hindi       pending_review  fields 6/7 sched FAIL $0.00121 16.1s ['time', 'pr_dube 2026-11-01 07:00: outside window 10:00-11:59', 'pr_joshi 2026-11-01 08:00: outside window 10:00-11:59', 'pr_sharma 2026-11-01 07:30: outside window 10:00-11:59']
+PASS C03_naming_gujarati_unqualified    pending_review  fields 6/6 sched ok $0.00071 15.74s 
+FAIL C04_archana_exact_evening          pending_review  fields 4/5 sched FAIL $0.00099 15.82s ['time', 'pr_dube 2026-11-05 18:00: outside window 18:30-18:30', 'pr_sharma 2026-11-05 18:00: outside window 18:30-18:30']
+PASS C05_abhishekam_evening             pending_review  fields 5/5 sched ok $0.00085 11.6s 
+PASS C06_consult_tamil_afternoon        pending_review  fields 6/6 sched ok $0.00095 12.72s 
+PASS C07_missing_everything             needs_info      fields 2/2 sched ok $0.00041 5.11s 
+PASS C08_missing_date                   needs_info      fields 5/5 sched ok $0.00021 3.83s 
+PASS C09_missing_location               needs_info      fields 5/5 sched ok $0.00021 7.14s 
+PASS C10_home_city_from_profile         pending_review  fields 6/6 sched ok $0.00122 19.84s 
+PASS C11_travel_beyond_radius           pending_review  fields 6/6 sched ok $0.00076 12.45s 
+PASS C12_travel_fee_waterbury           pending_review  fields 6/6 sched ok $0.00081 12.12s 
+PASS C13_travel_priest_limit            pending_review  fields 7/7 sched ok $0.00121 19.22s 
+PASS C14_time_off_telugu                pending_review  fields 6/6 sched ok $0.00081 11.98s 
+FAIL C15_diwali_conflict                pending_review  fields 4/5 sched ok $0.00133 18.25s ['time']
+FAIL C16_seeded_booking_conflict        pending_review  fields 4/5 sched FAIL $0.00103 14.34s ['time', 'pr_dube 2026-10-31 07:30: outside window 11:00-11:00', 'pr_sharma 2026-10-31 07:30: outside window 11:00-11:00', 'pr_sharma 2026-10-31 07:30: priest not allowed', 'pr_iyer 2026-10-31 07:30: 
+PASS C17_unavailable_service            needs_info      fields 2/2 sched ok $0.00023 5.23s 
+PASS C18_contradictory_location         pending_review  fields 5/5 sched ok $0.00139 20.21s 
+PASS C19_contradictory_dates            pending_review  fields 5/5 sched ok $0.00106 15.49s 
+PASS C20_accessibility_naming           pending_review  fields 8/8 sched ok $0.00106 11.87s 
+PASS C21_language_unavailable           pending_review  fields 5/5 sched ok $0.00083 12.57s 
+PASS C22_past_date                      needs_info      fields 3/3 sched ok $0.00030 5.78s 
+PASS C23_short_notice_griha             pending_review  fields 6/6 sched ok $0.00108 24.71s 
+PASS C24_ambiguous_time                 pending_review  fields 5/5 sched ok $0.00098 11.61s 
+FAIL C25_time_range_tamil               pending_review  fields 6/7 sched FAIL $0.00117 16.84s ['time', 'expected at least one valid option, got none']
+PASS C26_afternoon_griha                pending_review  fields 6/6 sched ok $0.00077 14.9s 
+FAIL C27_archana_exact_morning          pending_review  fields 4/5 sched FAIL $0.00107 12.35s ['time', 'pr_sharma 2026-11-03 08:30: outside window 08:00-08:00']
+{
+ "cases_passed": 21,
+ "cases": 27,
+ "field_accuracy_overall": 0.959,
+ "schedule_correct": 22,
+ "cost_usd_total": 0.023759,
+ "latency_seconds": {
+  "mean": 13.6,
+  "median": 12.72,
+  "p90": 19.41,
+  "max": 24.71
+ },
+ "failed_cases": [
+  "C02_satya_late_morning_hindi",
+  "C04_archana_exact_evening",
+  "C15_diwali_conflict",
+  "C16_seeded_booking_conflict",
+  "C25_time_range_tamil",
+  "C27_archana_exact_morning"
+ ]
+}

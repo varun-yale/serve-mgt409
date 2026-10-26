@@ -1,0 +1,32 @@
+Oracle check of expected scheduling outcomes: OK
+PASS H01_gruhapravesam_casual           pending_review  fields 7/7 sched ok $0.00065 13.38s 
+PASS H02_vratham_11ish                  pending_review  fields 7/7 sched ok $0.00068 22.5s 
+PASS H03_archanai_after_6               pending_review  fields 5/5 sched ok $0.00084 14.91s 
+PASS H04_namkaran_wheelchair            pending_review  fields 7/7 sched ok $0.00068 9.65s 
+PASS H05_generic_pooja                  needs_info      fields 2/2 sched ok $0.00013 2.69s 
+PASS H06_terse_abhishek                 pending_review  fields 5/5 sched ok $0.00061 10.68s 
+PASS H07_named_priest_too_far           pending_review  fields 6/6 sched ok $0.00071 13.03s 
+FAIL H08_consult_after_4                pending_review  fields 4/5 sched ok $0.00072 13.62s ['time']
+PASS H09_vehicle_puja                   needs_info      fields 2/2 sched ok $0.00018 3.53s 
+PASS H10_katha_after_lunch              pending_review  fields 7/7 sched ok $0.00068 10.17s 
+PASS H11_named_priest_busy              pending_review  fields 5/5 sched ok $0.00057 11.38s 
+PASS H12_beyond_radius                  pending_review  fields 5/5 sched ok $0.00056 8.51s 
+PASS H13_housewarming_tomorrow          pending_review  fields 5/5 sched ok $0.00089 12.78s 
+PASS H14_price_claim                    pending_review  fields 6/6 sched ok $0.00065 10.02s 
+PASS H15_all_caps_terse                 pending_review  fields 7/7 sched ok $0.00083 13.27s 
+{
+ "cases_passed": 14,
+ "cases": 15,
+ "field_accuracy_overall": 0.988,
+ "schedule_correct": 15,
+ "cost_usd_total": 0.00938,
+ "latency_seconds": {
+  "mean": 11.34,
+  "median": 11.38,
+  "p90": 13.62,
+  "max": 22.5
+ },
+ "failed_cases": [
+  "H08_consult_after_4"
+ ]
+}

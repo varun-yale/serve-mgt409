@@ -1,0 +1,2 @@
+e4b4412529ac63e6fa7dbb4a7208fe214b7989d86f8e4e0f79fd1e75312be361  tests/eval/rules_baseline.py
+frozen at 2026-10-25T21:11:32 before held-out cases were written

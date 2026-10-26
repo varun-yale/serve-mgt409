@@ -1,0 +1,206 @@
+{
+  "ai_workflow_measured": {
+    "main_set": {
+      "profile": "optimized",
+      "cases_passed": 26,
+      "cases": 27,
+      "field_accuracy": 0.993,
+      "schedule_correct": 27,
+      "seconds_to_recommendation_mean": 10.52,
+      "seconds_to_recommendation_p90": 15.42,
+      "cost_per_request_usd": 0.000565
+    },
+    "heldout_set": {
+      "label": "heldout_optimized",
+      "run_at": "2026-10-25T21:22:48",
+      "model": "gpt-6-luna",
+      "case_set": "heldout",
+      "profile": "optimized",
+      "defenses": "on",
+      "eval_today": "2026-10-25",
+      "date_tokens": {
+        "SAT_NEXT": "2026-10-31",
+        "SAT2": "2026-11-14",
+        "SAT3": "2026-11-21",
+        "SUN1": "2026-11-01",
+        "SUN2": "2026-11-08",
+        "MON1": "2026-11-02",
+        "TUE1": "2026-11-03",
+        "THU1": "2026-11-05",
+        "FRI1": "2026-11-06",
+        "TOMORROW": "2026-10-26",
+        "LAST_SUNDAY": "2026-10-18",
+        "DIWALI": "2026-11-08",
+        "IYER_OFF_MID": "2026-11-08"
+      },
+      "pricing": {
+        "gpt-6-luna": {
+          "input_per_1m": 0.1,
+          "cached_input_per_1m": 0.01,
+          "cache_write_per_1m": 0.125,
+          "output_per_1m": 0.5
+        },
+        "source": "OpenAI Standard pricing per 1M tokens, as given in MGT 409 Lecture 11 (same table used in HW6)."
+      },
+      "cases": 15,
+      "cases_passed": 14,
+      "field_accuracy_overall": 0.988,
+      "field_accuracy_by_field": {
+        "attendees": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "city": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 1.0
+        },
+        "dates": {
+          "correct": 13,
+          "total": 13,
+          "accuracy": 1.0
+        },
+        "language": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 1.0
+        },
+        "location_type": {
+          "correct": 13,
+          "total": 13,
+          "accuracy": 1.0
+        },
+        "missing": {
+          "correct": 2,
+          "total": 2,
+          "accuracy": 1.0
+        },
+        "service_id": {
+          "correct": 13,
+          "total": 13,
+          "accuracy": 1.0
+        },
+        "special_requirements": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "status": {
+          "correct": 15,
+          "total": 15,
+          "accuracy": 1.0
+        },
+        "time": {
+          "correct": 10,
+          "total": 11,
+          "accuracy": 0.909
+        }
+      },
+      "schedule_correct": 15,
+      "final_options_total": 23,
+      "agent_proposals_rejected_by_rules": 0,
+      "cases_with_option_policy_violations": 0,
+      "critical_bookings_created_by_agents": 0,
+      "pipeline_errors": 0,
+      "latency_seconds": {
+        "mean": 11.34,
+        "median": 11.38,
+        "p90": 13.62,
+        "max": 22.5
+      },
+      "tokens": {
+        "input_tokens": 91915,
+        "cached_input_tokens": 60432,
+        "cache_write_tokens": 23923,
+        "output_tokens": 10058,
+        "reasoning_tokens": 3241,
+        "model_requests": 60,
+        "tool_calls": 50,
+        "portkey_cache_hits": 0
+      },
+      "cost_usd_total": 0.00938,
+      "cost_usd_per_request_mean": 0.000625,
+      "cost_usd_per_scheduled_request_mean": 0.000697,
+      "failed_cases": [
+        "H08_consult_after_4"
+      ]
+    }
+  },
+  "phase1_agents_measured": {
+    "cases_passed": 21,
+    "field_accuracy": 0.959
+  },
+  "rules_only_measured": {
+    "main_set": {
+      "label": "rules_only_baseline",
+      "cases": 27,
+      "cases_passed": 27,
+      "field_accuracy_overall": 1.0,
+      "schedule_correct": 27,
+      "field_accuracy_by_field": {
+        "attendees": 1,
+        "city": 1,
+        "dates": 1,
+        "language": 1,
+        "location_type": 1,
+        "missing": 1,
+        "service_id": 1,
+        "special_requirements": 1,
+        "status": 1,
+        "time": 1
+      },
+      "mean_ms": 1.3,
+      "cost_usd": 0.0,
+      "failed_cases": [],
+      "caveat": "Keyword parser written by the test author after seeing the cases; optimistic upper bound."
+    },
+    "heldout_set": {
+      "label": "rules_only_heldout",
+      "cases": 15,
+      "cases_passed": 10,
+      "field_accuracy_overall": 0.889,
+      "schedule_correct": 11,
+      "field_accuracy_by_field": {
+        "attendees": 0,
+        "city": 1,
+        "dates": 0.846,
+        "language": 1,
+        "location_type": 0.923,
+        "missing": 1,
+        "service_id": 1,
+        "special_requirements": 1,
+        "status": 0.867,
+        "time": 0.727
+      },
+      "failed_cases": [
+        "H01_gruhapravesam_casual",
+        "H02_vratham_11ish",
+        "H06_terse_abhishek",
+        "H08_consult_after_4",
+        "H10_katha_after_lunch"
+      ]
+    },
+    "caveat": "Parser written by the test author; main-set score is not meaningful (written after seeing the cases). Held-out set was written after the parser was frozen."
+  },
+  "manual_estimate": {
+    "label": "ESTIMATE \u2014 not measured with real staff",
+    "basis": "Each data lookup the agents performed (priest qualifications, languages, calendars, travel, policies, slot checks) is treated as one manual lookup a staff member would do; plus 4.0 min to read the request and write a reply.",
+    "mean_lookups_per_request (measured from agent traces)": 4.81,
+    "estimated_staff_minutes_per_request": {
+      "low": 8.8,
+      "mid": 13.6,
+      "high": 18.4
+    },
+    "with_serve_staff_steps": "Open request, read evidence, click Approve (1 click) \u2014 or Edit & approve (form + check + approve)."
+  },
+  "stakeholder_feedback": {
+    "status": "NOT COLLECTED",
+    "useful_to_collect": [
+      "Temple office staff: how long a griha pravesh / satyanarayan request takes today (timed, 5-10 real requests)",
+      "Priests: whether suggested slots respect real preparation/travel realities",
+      "Members: whether the clarifying questions and proposed times are clear (5-question survey)",
+      "Board/treasurer: acceptable cost per request and data-privacy expectations"
+    ]
+  }
+}

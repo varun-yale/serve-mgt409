@@ -1,0 +1,9 @@
+{
+  "gpt-6-luna": {
+    "input_per_1m": 0.1,
+    "cached_input_per_1m": 0.01,
+    "cache_write_per_1m": 0.125,
+    "output_per_1m": 0.5
+  },
+  "source": "OpenAI Standard tier list price (short context <=272K; 30-minute cache write), verified 2026-10-25 at https://developers.openai.com/api/docs/pricing. Matches the MGT 409 course table. Calls are routed by the course Portkey config to an Azure OpenAI deployment (reported as gpt-6-luna-global); Azure's billed rate was not verifiable, so costs are list-price estimates from API-reported tokens."
+}

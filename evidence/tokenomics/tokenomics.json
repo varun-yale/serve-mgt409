@@ -1,0 +1,254 @@
+{
+  "configs": {
+    "baseline_phase1": {
+      "label": "baseline_phase1",
+      "profile": "default",
+      "cases": 27,
+      "cases_passed": 21,
+      "field_accuracy": 0.959,
+      "schedule_correct": 22,
+      "input_tokens": 210093,
+      "cached_input_tokens": 97013,
+      "cached_share_of_input": 0.462,
+      "cache_write_tokens": 54637,
+      "output_tokens": 20229,
+      "model_requests": 139,
+      "tool_calls": 160,
+      "portkey_cache_hits": 0,
+      "cost_total_usd": 0.023759,
+      "cost_mean_per_request_usd": 0.00088,
+      "cost_mean_scheduled_request_usd": 0.001018,
+      "cost_p90_scheduled_request_usd": 0.00121,
+      "cost_mean_needs_info_request_usd": 0.000272,
+      "latency_s": {
+        "mean": 13.6,
+        "median": 12.72,
+        "p90": 19.41,
+        "max": 24.71
+      },
+      "per_agent": {
+        "intake": {
+          "runs": 27,
+          "mean_model_requests": 2.07,
+          "mean_tool_calls": 1.07,
+          "mean_input_tokens": 2280,
+          "mean_cached_input_tokens": 1142,
+          "mean_output_tokens": 201,
+          "mean_latency_s": 5.17,
+          "mean_cost_usd": 0.000228
+        },
+        "scheduling": {
+          "runs": 22,
+          "mean_model_requests": 3.77,
+          "mean_tool_calls": 5.95,
+          "mean_input_tokens": 6751,
+          "mean_cached_input_tokens": 3008,
+          "mean_output_tokens": 672,
+          "mean_latency_s": 10.31,
+          "mean_cost_usd": 0.0008
+        }
+      }
+    },
+    "v2_standard": {
+      "label": "v2_standard",
+      "profile": "standard",
+      "cases": 27,
+      "cases_passed": 27,
+      "field_accuracy": 1.0,
+      "schedule_correct": 27,
+      "input_tokens": 251171,
+      "cached_input_tokens": 163531,
+      "cached_share_of_input": 0.651,
+      "cache_write_tokens": 69496,
+      "output_tokens": 20630,
+      "model_requests": 144,
+      "tool_calls": 159,
+      "portkey_cache_hits": 0,
+      "cost_total_usd": 0.022452,
+      "cost_mean_per_request_usd": 0.000832,
+      "cost_mean_scheduled_request_usd": 0.000969,
+      "cost_p90_scheduled_request_usd": 0.001147,
+      "cost_mean_needs_info_request_usd": 0.000225,
+      "latency_s": {
+        "mean": 15.25,
+        "median": 16.19,
+        "p90": 19.7,
+        "max": 38.98
+      },
+      "per_agent": {
+        "intake": {
+          "runs": 27,
+          "mean_model_requests": 2.07,
+          "mean_tool_calls": 1.07,
+          "mean_input_tokens": 3065,
+          "mean_cached_input_tokens": 2346,
+          "mean_output_tokens": 197,
+          "mean_latency_s": 5.08,
+          "mean_cost_usd": 0.000205
+        },
+        "scheduling": {
+          "runs": 22,
+          "mean_model_requests": 4,
+          "mean_tool_calls": 5.91,
+          "mean_input_tokens": 7655,
+          "mean_cached_input_tokens": 4554,
+          "mean_output_tokens": 696,
+          "mean_latency_s": 12.45,
+          "mean_cost_usd": 0.000768
+        }
+      }
+    },
+    "v2_optimized": {
+      "label": "v2_optimized",
+      "profile": "optimized",
+      "cases": 27,
+      "cases_passed": 26,
+      "field_accuracy": 0.993,
+      "schedule_correct": 27,
+      "input_tokens": 143641,
+      "cached_input_tokens": 91507,
+      "cached_share_of_input": 0.637,
+      "cache_write_tokens": 40164,
+      "output_tokens": 16240,
+      "model_requests": 95,
+      "tool_calls": 79,
+      "portkey_cache_hits": 0,
+      "cost_total_usd": 0.015253,
+      "cost_mean_per_request_usd": 0.000565,
+      "cost_mean_scheduled_request_usd": 0.000651,
+      "cost_p90_scheduled_request_usd": 0.00082,
+      "cost_mean_needs_info_request_usd": 0.000262,
+      "latency_s": {
+        "mean": 10.52,
+        "median": 9.98,
+        "p90": 15.42,
+        "max": 29.14
+      },
+      "per_agent": {
+        "intake": {
+          "runs": 27,
+          "mean_model_requests": 1.07,
+          "mean_tool_calls": 0.07,
+          "mean_input_tokens": 1595,
+          "mean_cached_input_tokens": 1358,
+          "mean_output_tokens": 196,
+          "mean_latency_s": 2.91,
+          "mean_cost_usd": 0.000138
+        },
+        "scheduling": {
+          "runs": 22,
+          "mean_model_requests": 3,
+          "mean_tool_calls": 3.5,
+          "mean_input_tokens": 4572,
+          "mean_cached_input_tokens": 2493,
+          "mean_output_tokens": 498,
+          "mean_latency_s": 9.3,
+          "mean_cost_usd": 0.000524
+        }
+      }
+    }
+  },
+  "chosen_profile": "optimized",
+  "repeat_runs": {
+    "standard": [
+      {
+        "label": "v2_standard",
+        "cases_passed": 27,
+        "field_accuracy": 1.0,
+        "schedule_correct": 27,
+        "cost_total_usd": 0.022452,
+        "latency_mean_s": 15.25,
+        "failed_cases": []
+      },
+      {
+        "label": "v2_standard_r2",
+        "cases_passed": 26,
+        "field_accuracy": 0.986,
+        "schedule_correct": 26,
+        "cost_total_usd": 0.017733,
+        "latency_mean_s": 14.21,
+        "failed_cases": [
+          "C10_home_city_from_profile"
+        ]
+      }
+    ],
+    "optimized": [
+      {
+        "label": "v2_optimized",
+        "cases_passed": 26,
+        "field_accuracy": 0.993,
+        "schedule_correct": 27,
+        "cost_total_usd": 0.015253,
+        "latency_mean_s": 10.52,
+        "failed_cases": [
+          "C18_contradictory_location"
+        ]
+      },
+      {
+        "label": "v2_optimized_r2",
+        "cases_passed": 27,
+        "field_accuracy": 1.0,
+        "schedule_correct": 27,
+        "cost_total_usd": 0.012426,
+        "latency_mean_s": 10.07,
+        "failed_cases": []
+      }
+    ]
+  },
+  "projection": {
+    "assumptions": {
+      "clarification_share": 0.25,
+      "cost_scheduled_request_usd (measured mean)": 0.000592,
+      "cost_needs_info_round_usd (measured mean)": 0.000202,
+      "pricing": "OpenAI list price for gpt-6-luna (verified on developers.openai.com/api/docs/pricing); calls are routed to Azure OpenAI by the course Portkey config, whose billed rate we cannot see",
+      "excludes": "hosting, Portkey fees, staff time"
+    },
+    "expected_cost_per_member_request_usd": 0.000642,
+    "expected_cost_per_member_request_usd_p90": 0.000824,
+    "table": {
+      "100": {
+        "expected_usd": 0.0643,
+        "p90_usd": 0.0824,
+        "model_runs_approx": 225
+      },
+      "1000": {
+        "expected_usd": 0.6425,
+        "p90_usd": 0.8235,
+        "model_runs_approx": 2250
+      },
+      "10000": {
+        "expected_usd": 6.425,
+        "p90_usd": 8.235,
+        "model_runs_approx": 22500
+      }
+    }
+  },
+  "projection_other_profile": {
+    "assumptions": {
+      "clarification_share": 0.25,
+      "cost_scheduled_request_usd (measured mean)": 0.000884,
+      "cost_needs_info_round_usd (measured mean)": 0.000199,
+      "pricing": "OpenAI list price for gpt-6-luna (verified on developers.openai.com/api/docs/pricing); calls are routed to Azure OpenAI by the course Portkey config, whose billed rate we cannot see",
+      "excludes": "hosting, Portkey fees, staff time"
+    },
+    "expected_cost_per_member_request_usd": 0.000934,
+    "expected_cost_per_member_request_usd_p90": 0.001181,
+    "table": {
+      "100": {
+        "expected_usd": 0.0934,
+        "p90_usd": 0.1181,
+        "model_runs_approx": 225
+      },
+      "1000": {
+        "expected_usd": 0.9337,
+        "p90_usd": 1.1807,
+        "model_runs_approx": 2250
+      },
+      "10000": {
+        "expected_usd": 9.3375,
+        "p90_usd": 11.8075,
+        "model_runs_approx": 22500
+      }
+    }
+  }
+}
